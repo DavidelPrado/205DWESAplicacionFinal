@@ -1,0 +1,46 @@
+h1{
+    text-align: center;
+    background-color: brown;
+    color: white;
+    width: 100%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 0px
+}
+a{
+    text-decoration: none;
+    color: grey;
+}
+th, td{
+    border: solid 1px black;
+}
+
+footer{
+    background-color: brown;
+    text-align: center;
+    width: 98.5%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+    color: white;
+    position: fixed;
+    bottom: 10px;
+}
+footer table{
+    margin: auto;
+}
+footer td{
+    border: none;
+}
+table img{
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.vInicio form{
+    text-align: center;
+}
+
+.vInicio p{
+    text-align: center;
+}
