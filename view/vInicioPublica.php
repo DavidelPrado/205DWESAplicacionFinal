@@ -8,7 +8,10 @@
     */
 ?>
 <div class="vInicio">
-    <h1><a href="../proyectoDWES/indexProyectoDWES.php"><=</a>   Inicio publico</h1>
+    <header>
+        <h1>Aplicación final</h1>
+        <h3>Inicio publico</h3>
+    </header>
     <p>Bienvenido</p>
     <br><br>
     <form method="post">

@@ -1,12 +1,19 @@
-h1{
+header{
     text-align: center;
     background-color: brown;
     color: white;
     width: 100%;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    margin-top: 0px
+    padding: 2px;
+    margin-top: 0px;
+    margin-bottom: 10px;
 }
+h1{
+    margin-bottom: 0px;
+}
+h3{
+    margin-top: 0px;
+}
+
 a{
     text-decoration: none;
     color: grey;
@@ -36,11 +43,13 @@ table img{
     margin-left: 10px;
     border-radius: 5px;
 }
-
-.vInicio form{
+form{
+    text-align: center;
+}
+p{
     text-align: center;
 }
 
-.vInicio p{
-    text-align: center;
+.vREST + footer{
+    position: relative;
 }

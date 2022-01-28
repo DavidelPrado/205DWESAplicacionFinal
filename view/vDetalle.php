@@ -7,7 +7,10 @@
     * Vista de las variables superglobales y phpInfo
     */
 ?>
-<h1>Detalle</h1>
+<header>
+    <h1>Aplicación final</h1>
+    <h3>Detalle</h3>
+</header><br>
 <form method="post">
     <input type='submit' name='volver' value='Volver'/>
 </form>

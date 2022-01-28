@@ -16,6 +16,7 @@
     include 'model/Usuario.php';
     include 'model/UsuarioPDO.php';
     include 'model/AppError.php';
+    include 'model/REST.php';
     
     //Definir constantes
     define("OBLIGATORIO", 1);

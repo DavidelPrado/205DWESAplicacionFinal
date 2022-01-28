@@ -7,7 +7,11 @@
     * Ventana con el formulario de login
     */
 ?>
-<h1>Login</h1>
+<header>
+    <h1>Aplicación final</h1>
+    <h3>Login</h3>
+</header>
+
 <form method="post">
     <fieldset>
         <label>Usuario:</label><br>

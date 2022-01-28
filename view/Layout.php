@@ -15,8 +15,8 @@
         <footer>
             <table>
                 <tr>
-                    <td><p>David del Prado Losada - DAW2</p></td>
-                    <td><a href="https://github.com/DavidelPrado/205DWESAplicacionLoginLogoutMulticapa" target="_blank"><img src="../../img/git.png" width="50px" height="50px"></img></a></td>
+                    <td><p>David del Prado Losada</p></td>
+                    <td><a href="https://github.com/DavidelPrado/205DWESAplicacionFinal" target="_blank"><img src="../../img/git.png" width="50px" height="50px"></img></a></td>
                 </tr>
             </table>
         </footer>

@@ -8,7 +8,10 @@
     */
 ?>
 <div class="vError">
-    <h1>Error</h1>
+    <header>
+        <h1>Aplicación final</h1>
+        <h3>Error</h3>
+    </header><br>
     <h2>Ha ocurrido un error</h2>
     <table>
         <tr>
