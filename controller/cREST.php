@@ -12,8 +12,14 @@
         header('location: ./index.php');
         exit;
     }
-
-    $aMostrar=REST::usuarioAleatorio();
     
+    if(isset($_REQUEST['usuario'])){
+        $aMostrar=REST::usuarioAleatorio();
+        foreach($aMostrar as $valor){
+               
+        }
+        
+    }
+
     include $aVistas['layout'];
 ?>

@@ -9,7 +9,7 @@
 
     class UsuarioPDO implements UsuarioDB{
         public static function validarUsuario($codUsuario, $password){
-             $consulta = <<<PDO
+            $consulta = <<<PDO
                 SELECT * FROM T01_Usuario
                 WHERE T01_CodUsuario='{$codUsuario}' AND
                 T01_Password=SHA2("{$codUsuario}{$password}", 256);
@@ -25,8 +25,20 @@
             }
         }
         
-        public static function altaUsuario(){
-            
+        public static function altaUsuario($usuario, $password, $repetirPassword, $descripcion){
+            $consulta="SELECT * FROM T01_Usuario WHERE T01_CodUsuario='{$usuario}'";
+            $oResultado=DBPDO::ejecutarConsulta($consulta);
+            $oUsuario=$oResultado->fetchobject();
+
+            if($oUsuario->rowCount()>0){ 
+                $aErrores['usuario'] = "El usuario ya existe.";
+                return false;
+            }
+
+            if($password!=$repetirPassword){ 
+                $aErrores['RepetirPassword']="Las contraseñas no coinciden.";
+                return false;
+            }
         }
         
         public static function modificarUsuario(){

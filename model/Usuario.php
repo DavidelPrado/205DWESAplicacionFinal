@@ -26,7 +26,6 @@
             $this->perfil = $perfil;
         }
         
-        
         function getCodUsuario(){
             return $this->codUsuario;
         }

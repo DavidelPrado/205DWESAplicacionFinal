@@ -14,6 +14,12 @@
         exit;
     }
     
+    if(isset($_REQUEST['registro'])){
+        $_SESSION['paginaEnCurso']='registro';
+        header('location: ./index.php');
+        exit;
+    }
+    
     if(isset($_REQUEST['login'])){
         $aErrores["usuario"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["usuario"], 255, MIN_TAMANIO, OBLIGATORIO);
         $aErrores["password"]=validacionFormularios::validarPassword($_REQUEST["password"], 8, MIN_TAMANIO, 1, OBLIGATORIO);

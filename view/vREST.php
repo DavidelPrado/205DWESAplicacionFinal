@@ -15,10 +15,14 @@
     
     <form method="post">
         <input type='submit' name='volver' value='Volver'/>
+        <input type='submit' name='usuario' value='Generar usuario'/>
     </form>
+    
     <?php
-        foreach($aMostrar as $valor){
-            var_dump($valor);
+        if(isset($aMostrar)){
+            foreach($aMostrar as $valor){
+                var_dump($valor);
+            }
         }
     ?>
 </div>

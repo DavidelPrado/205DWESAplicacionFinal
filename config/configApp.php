@@ -17,6 +17,7 @@
     include 'model/UsuarioPDO.php';
     include 'model/AppError.php';
     include 'model/REST.php';
+    include 'model/UsuarioAleatorio.php';
     
     //Definir constantes
     define("OBLIGATORIO", 1);
@@ -34,7 +35,8 @@
         'detalle' => 'controller/cDetalle.php',
         'WIP' => 'controller/cWIP.php',
         'error' => 'controller/cError.php',
-        'rest' => 'controller/cREST.php'
+        'rest' => 'controller/cREST.php',
+        'registro' => 'controller/cRegistro.php'
     ];
 
     //Array de las vistas
@@ -46,6 +48,7 @@
         'detalle' => 'view/vDetalle.php',
         'WIP' => 'view/vWIP.php',
         'error' => 'view/vError.php',
-        'rest' => 'view/vREST.php'
+        'rest' => 'view/vREST.php',
+        'registro' => 'view/vRegistro.php'
     ];
 ?>
