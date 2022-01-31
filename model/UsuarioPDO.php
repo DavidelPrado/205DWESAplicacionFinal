@@ -25,30 +25,6 @@
             }
         }
         
-        public static function altaUsuario($usuario, $password, $repetirPassword, $descripcion){
-            $consulta="SELECT * FROM T01_Usuario WHERE T01_CodUsuario='{$usuario}'";
-            $oResultado=DBPDO::ejecutarConsulta($consulta);
-            $oUsuario=$oResultado->fetchobject();
-
-            if($oUsuario->rowCount()>0){ 
-                $aErrores['usuario'] = "El usuario ya existe.";
-                return false;
-            }
-
-            if($password!=$repetirPassword){ 
-                $aErrores['RepetirPassword']="Las contraseñas no coinciden.";
-                return false;
-            }
-        }
-        
-        public static function modificarUsuario(){
-            
-        }
-        
-        public static function borrarUsuario(){
-            
-        }
-        
         public static function registrarUltimaConexion($oUsuario){
             //Guardo la hora actual
             $oDateTime = new DateTime();
@@ -67,5 +43,42 @@
             
             return $oUsuario;
         }
+        
+        public static function altaUsuario($codUsuario, $password, $descripcion){
+            $consulta=<<<SQL
+                INSERT INTO T01_Usuario(T01_CodUsuario, T01_Password, T01_DescUsuario) 
+                VALUES ('{$codUsuario}', SHA2('{$codUsuario}{$password}', 256), '{$descripcion}');
+            SQL;
+                
+            $oResultado=DBPDO::ejecutarConsulta($consulta);
+            $oUsuario=$oResultado->fetchObject();
+            
+            if($oUsuario){
+                return new Usuario($_REQUEST["usuario"], $_REQUEST["password"], $_REQUEST["descripcion"], 1, time(), null, $oUsuario->T01_Perfil);
+            }else{
+                return false;
+            }
+            
+            
+        }
+        
+        public static function validarCodNoExiste($codUsuario){
+            $consulta="SELECT * FROM T01_Usuario WHERE T01_CodUsuario='{$codUsuario}'";
+            
+            $oResultado=DBPDO::ejecutarConsulta($consulta);
+            
+            return $oResultado->fetchObject();
+        }
+        
+        
+        public static function modificarUsuario(){
+            
+        }
+        
+        public static function borrarUsuario(){
+            
+        }
+        
+        
     }
 ?>

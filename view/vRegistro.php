@@ -14,42 +14,33 @@
 
 <form method="post">
     <h2>Registro de un nuevo usuario:</h2>
+    
     <label>Usuario:</label><br>
-
-    <!--<input type='text' name='CodUsuario' value="<?php
+    <input type='text' name='usuario' value="<?php
         //Mostrar los datos correctos introducidos en un intento anterior
-        echo isset($_REQUEST["CodUsuario"]) ? $_REQUEST["CodUsuario"] : "";
-    ?>"/><p ><?php
-        //Mostrar los errores en el CodUsuario, si los hay
-        echo $aErrores["CodUsuario"]!=null ? $aErrores["CodUsuario"] : "";
+        echo isset($_REQUEST["usuairo"]) ? $_REQUEST["usuario"] : "";
+    ?>"/><p><?php
+        //Mostrar los errores en el usuario, si los hay
+        echo $aErrores["usuario"]!=null ? $aErrores["usuario"] : "";
     ?></p>
 
     <label>Contraseña:</label><br>
-    <input type='password' name="Password" value="<?php
+    <input type='password' name="password" value="<?php
         //Mostrar los datos correctos introducidos en un intento anterior
-        echo isset($_REQUEST["Password"]) ? $_REQUEST["Password"] : "";
+        echo isset($_REQUEST["password"]) ? $_REQUEST["password"] : "";
     ?>"/><p ><?php
         //Mostrar los errores en la contraseña, si los hay
-        echo $aErrores["Password"]!=null ? $aErrores["Password"] : "";
+        echo $aErrores["password"]!=null ? $aErrores["password"] : "";
     ?></p>
 
-    <label>Repetir contraseña:</label><br>
-    <input type='password' name="RepetirPassword" value="<?php
+    <label>Descripcion:</label><br>
+    <input type="text" name="descripcion" value="<?php
         //Mostrar los datos correctos introducidos en un intento anterior
-        echo isset($_REQUEST["RepetirPassword"]) ? $_REQUEST["RepetirPassword"] : "";
+        echo isset($_REQUEST["descripcion"]) ? $_REQUEST["descripcion"] : "";
     ?>"/><p ><?php
-        //Mostrar los errores en la contraseña, si los hay
-        echo $aErrores["RepetirPassword"]!=null ? $aErrores["RepetirPassword"] : "";
+        //Mostrar los errores en la descripcion, si los hay
+        echo $aErrores["descripcion"]!=null ? $aErrores["descripcion"] : "";
     ?></p>
-
-    <label>Descripcion:</label>
-    <input type="text" name="DescUsuario" value="<?php
-        //Mostrar los datos correctos introducidos en un intento anterior
-        echo isset($_REQUEST["DescUsuario"]) ? $_REQUEST["DescUsuario"] : "";
-    ?>"/><p ><?php
-        //Mostrar los errores en la DescUsuario, si los hay
-        echo $aErrores["DescUsuario"]!=null ? $aErrores["DescUsuario"] : "";
-    ?></p>-->
 
     <br><br>
     <input type='submit' name='crear' value='Crear'/>
