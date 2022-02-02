@@ -9,9 +9,9 @@
 
     class REST{
         public static function usuarioAleatorio(){
-            $oJSON=file_get_contents('https://randomuser.me/api/?inc=gender,name,email,login,nat&noinfo');
+            $oJSON=file_get_contents('https://randomuser.me/api/?noinfo');
     
-            $aJSON=json_decode($oJSON, true);
+            $aJSON=json_decode($oJSON);
             
             $aUsuario=[];
             
@@ -20,7 +20,6 @@
             }
             
             return $aUsuario;
-            //return $aJSON;
         }
     }
 ?>

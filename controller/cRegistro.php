@@ -18,7 +18,6 @@
     $aErrores=[
         "usuario"=>null,
         "password"=>null,
-        "repetirPassword"=>null,
         "descripcion"=>null
     ];
     

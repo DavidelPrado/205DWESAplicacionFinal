@@ -21,7 +21,10 @@
     <?php
         if(isset($aMostrar)){
             foreach($aMostrar as $valor){
-                var_dump($valor);
+                foreach ($valor as $salida){
+                    print_r($salida);
+                    echo '<br><br>';
+                }
             }
         }
     ?>

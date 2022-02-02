@@ -15,9 +15,6 @@
     
     if(isset($_REQUEST['usuario'])){
         $aMostrar=REST::usuarioAleatorio();
-        foreach($aMostrar as $valor){
-               
-        }
         
     }
 
