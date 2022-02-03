@@ -18,6 +18,7 @@
     include 'model/AppError.php';
     include 'model/REST.php';
     include 'model/UsuarioAleatorio.php';
+    include 'model/Palabra.php';
     
     //Definir constantes
     define("OBLIGATORIO", 1);

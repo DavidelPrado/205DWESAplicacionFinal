@@ -13,13 +13,19 @@
     
             $aJSON=json_decode($oJSON);
             
-            $aUsuario=[];
-            
             foreach($aJSON as $valor){
-                $aUsuario=$valor;
+                foreach($valor as $salida){
+                    return $salida;
+                }
             }
+        }
+        
+        public static function buscarPalabra($idioma, $palabra){
+            $oJSON= file_get_contents('https://api.dictionaryapi.dev/api/v2/entries/'.$idioma.'/'.$palabra.'');
             
-            return $aUsuario;
+            $aSalida=json_decode($oJSON)[0];
+            
+            return new Palabra($aSalida->word, $aSalida->origin??"no", $aSalida->meanings);
         }
     }
 ?>
