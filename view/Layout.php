@@ -15,8 +15,9 @@
         <footer>
             <table>
                 <tr>
-                    <td><p>David del Prado Losada</p></td>
-                    <td><a href="https://github.com/DavidelPrado/205DWESAplicacionFinal" target="_blank"><img src="../../img/git.png" width="50px" height="50px"></img></a></td>
+                    <td><a href="https://daw205.ieslossauces.es/">David del Prado Losada</a></td>
+                    <td><a href="https://github.com/DavidelPrado/205DWESAplicacionFinal" target="_blank"><img src="img/git.png" width="50px" height="50px"></img></a></td>
+                    <td><a href="doc/index.html" target="_blank"><img src="img/phpDoc.png" width="50px" height="50px"></img></a></td>
                 </tr>
             </table>
         </footer>

@@ -37,7 +37,8 @@
         'WIP' => 'controller/cWIP.php',
         'error' => 'controller/cError.php',
         'rest' => 'controller/cREST.php',
-        'registro' => 'controller/cRegistro.php'
+        'registro' => 'controller/cRegistro.php',
+        'tecnologias' => 'controller/cTecnologias.php'
     ];
 
     //Array de las vistas
@@ -50,6 +51,7 @@
         'WIP' => 'view/vWIP.php',
         'error' => 'view/vError.php',
         'rest' => 'view/vREST.php',
-        'registro' => 'view/vRegistro.php'
+        'registro' => 'view/vRegistro.php',
+        'tecnologias' => 'view/vTecnologias.php'
     ];
 ?>
