@@ -38,10 +38,40 @@
     <?php 
     if(isset($aVPalabra)){?>
         <h2>Palabra: <?php print_r($aVPalabra["palabra"]);?></h2>
-    
-        
-        
+        <h3>Origen: <?php print_r($aVPalabra["origen"]);?></h3>
+        <?php foreach ($aVPalabra["significados"] as $aMeaning){ ?>
+            <article>
+                <h3><?php
+                    echo ($aMeaning->partOfSpeech)??'';
+                ?></h3>
+                <ol>
+                    <?php
+                    foreach ($aMeaning->definitions as $aDefinition) {
+                        echo "<li>$aDefinition->definition";
+                        if (!empty($aDefinition->synonyms)) {
+                            ?>
+                            <div>
+                                <h4>Sinónimos:</h4>
+                                <div><?php echo implode(', ', $aDefinition->synonyms); ?></div>
+                            </div>
+                            <?php
+                        }
+                        if (!empty($aDefinition->antonyms)) {
+                            ?>
+                            <div>
+                                <h4>Antónimos:</h4>
+                                <div><?php echo implode(', ', $aDefinition->antonyms); ?></div>
+                            </div>
+                            <?php
+                        }
+                        echo '</li>';
+                    }
+                    ?>
+                </ol>
+            </article><?php
+        }
+        ?>
     <?php
-    } 
+    }
     ?>
 </div>

@@ -41,13 +41,15 @@
     
     if($entradaOK){
         $oPalabra=REST::buscarPalabra($_REQUEST["idioma"], $_REQUEST["palabra"]);
+        
+        $aVPalabra=[
+            'palabra' => $oPalabra->palabra,
+            'origen' => $oPalabra->origen,
+            'significados' => $oPalabra->significados
+        ];
     }
     
-    $aVPalabra=[
-        'palabra' => $oPalabra->palabra,
-        'origen' => $oPalabra->origen,
-        'significados' => $oPalabra->significados
-    ];
+    
     
     include $aVistas['layout'];
 ?>
