@@ -7,11 +7,11 @@
     */
 
     //Conexión desarrollo
-    
+    /*
     define("HOST", 'mysql:host=daw205.sauces.local; dbname=DB205DWESLoginLogout'); 
     define("USER", 'user205DWESLoginLogout');
     define("PASSWORD", 'P@ssw0rd');
-    
+    */
     
     //Conexión con 1&1
     /*
