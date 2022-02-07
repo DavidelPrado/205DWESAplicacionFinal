@@ -52,14 +52,10 @@ p{
     justify-content: center;
 }
 
-.vError{
+form{
+    text-align: center;
+}
+p{
     text-align: center;
 }
 
-.vError table{
-    margin: auto;
-}
-
-.vError form{
-    padding-top: 20px;
-}
