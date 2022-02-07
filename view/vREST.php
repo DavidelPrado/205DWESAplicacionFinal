@@ -66,8 +66,4 @@
     <?php
     }
     ?>
-<<<<<<< HEAD (f68de3e) - Merge master into devel
 </div>
-=======
-</div>
->>>>>>> origin/developer (431ddcb) - Actualizado
