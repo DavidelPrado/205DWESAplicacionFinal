@@ -42,7 +42,7 @@
     
     if($entradaOK){
         $oUsuario=UsuarioPDO::altaUsuario($_REQUEST["usuario"], $_REQUEST["password"], $_REQUEST["descripcion"]);
-        $_SESSION['usuarioDAW205AppLoginLogout'] = $oUsuario;
+        $_SESSION['usuarioDAW205AplicacionFinal'] = $oUsuario;
 
         $_SESSION['paginaEnCurso'] = 'inicio';
         header('location: ./index.php');

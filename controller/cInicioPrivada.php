@@ -7,7 +7,7 @@
     * Controlador de la vista de inicio privada
     */
 
-    if(!isset($_SESSION['usuarioDAW205AppLoginLogout'])){
+    if(!isset($_SESSION['usuarioDAW205AplicacionFinal'])){
         $_SESSION['paginaEnCurso'] = $aControladores['login'];
         header('location: ./index.php');
         exit;
@@ -53,7 +53,7 @@
     //Obtener datos para mostrar en el mensaje de bienvenida y guardarlos en el array aVInicio
     $consulta = <<<QUERY
         SELECT T01_DescUsuario, T01_NumConexiones FROM T01_Usuario
-        WHERE T01_CodUsuario='{$_SESSION['usuarioDAW205AppLoginLogout']->getCodUsuario()}';
+        WHERE T01_CodUsuario='{$_SESSION['usuarioDAW205AplicacionFinal']->getCodUsuario()}';
     QUERY;
     $oResultado = DBPDO::ejecutarConsulta($consulta)->fetchObject();
 
