@@ -12,7 +12,7 @@
         <input type='password' name='password'/>
         <br><br>
         <input type='submit' name='login' value='Login'/>
-        <!--<input type="submit" name="registro" value="Registro"/>-->
+        <input type="submit" name="registro" value="Registro"/>
         <input type='submit' name='cancelar' value='Cancelar'/>
     </fieldset>
 </form>

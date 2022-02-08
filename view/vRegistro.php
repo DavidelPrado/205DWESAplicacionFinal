@@ -9,7 +9,7 @@
     <label>Usuario:</label><br>
     <input type='text' name='usuario' value="<?php
         //Mostrar los datos correctos introducidos en un intento anterior
-        echo isset($_REQUEST["usuairo"]) ? $_REQUEST["usuario"] : "";
+        echo isset($_REQUEST["usuario"]) ? $_REQUEST["usuario"] : "";
     ?>"/><p><?php
         //Mostrar los errores en el usuario, si los hay
         echo $aErrores["usuario"]!=null ? $aErrores["usuario"] : "";
@@ -22,6 +22,15 @@
     ?>"/><p ><?php
         //Mostrar los errores en la contraseña, si los hay
         echo $aErrores["password"]!=null ? $aErrores["password"] : "";
+    ?></p>
+    
+    <label>Repetir contraseña:</label><br>
+    <input type='password' name="repetirPassword" value="<?php
+        //Mostrar los datos correctos introducidos en un intento anterior
+        echo isset($_REQUEST["repetirPassword"]) ? $_REQUEST["repetirPassword"] : "";
+    ?>"/><p ><?php
+        //Mostrar los errores en la contraseña, si los hay
+        echo $aErrores["repetirPassword"]!=null ? $aErrores["repetirPassword"] : "";
     ?></p>
 
     <label>Descripcion:</label><br>

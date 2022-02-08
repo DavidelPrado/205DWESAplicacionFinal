@@ -2,10 +2,12 @@
     <header>
         <h1>Aplicación final</h1>
         <h3>REST</h3>
+        <form method="post">
+            <input type='submit' name='volver' value='Volver'/>
+        </form>
     </header><br>
     <!--
     <form method="post">
-        <input type='submit' name='volver' value='Volver'/>
         <input type='submit' name='usuario' value='Generar usuario'/>
     </form>-->
     
@@ -13,7 +15,10 @@
         <legend><h2>Diccionario:</h2></legend>
 
         <label>Palabra:</label><br>
-        <input type='text' name='palabra'/><br><br>
+        <input type='text' name='palabra' value="<?php
+        //Mostrar los datos correctos introducidos en un intento anterior
+        echo isset($_REQUEST["palabra"]) ? $_REQUEST["palabra"] : "";
+        ?>"/><br><br>
         
         <label>Idioma:</label><br>
         <select name="idioma">
@@ -24,7 +29,7 @@
         
         <br><br>
         <input type='submit' name='buscar' value='Buscar'/>
-        <input type='submit' name='volver' value='Volver'/>
+        
     </form>
     
     <?php 

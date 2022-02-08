@@ -29,7 +29,7 @@
             <a href="img/pdf/ArbolDeNavegacion.pdf" target="_blank">
                 <img src="img/ArbolDeNavegacion.png" width="200px" height="250px">
             </a>
-            <p>Árbol de navegacion</p>
+            <p>Árbol de navegación</p>
         </div>
         <div class="caja">
             <a href="img/pdf/RelacionDeFicheros.pdf" target="_blank">
@@ -47,7 +47,7 @@
             <a href="img/pdf/ModeloFisicoDeDatos.pdf" target="_blank">
                 <img src="img/ModeloFisicoDeDatos.png" width="200px" height="250px">
             </a>
-            <p>Modelo fisico de datos</p>
+            <p>Modelo físico de datos</p>
         </div>
     </div>
 </div>

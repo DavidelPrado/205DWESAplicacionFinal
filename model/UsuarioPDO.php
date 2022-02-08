@@ -1,10 +1,11 @@
 <?php
-    /*
+    /**
+    * Clase para el manejo de usuarios en la base de datos
+    * 
+    * 
     * @author: David del Prado Losada
     * @since: 02/01/2022
     * @version: v1.0
-    * 
-    * Clase para el manejo de usuarios en la base de datos
     */
 
     class UsuarioPDO implements UsuarioDB{
@@ -45,25 +46,22 @@
         }
         
         public static function altaUsuario($codUsuario, $password, $descripcion){
-            $consulta=<<<SQL
-                INSERT INTO T01_Usuario(T01_CodUsuario, T01_Password, T01_DescUsuario) 
-                VALUES ('{$codUsuario}', SHA2('{$codUsuario}{$password}', 256), '{$descripcion}');
-            SQL;
-                
-            $oResultado=DBPDO::ejecutarConsulta($consulta);
-            $oUsuario=$oResultado->fetchObject();
+            $oDateTime = new DateTime();
             
-            if($oUsuario){
-                return new Usuario($_REQUEST["usuario"], $_REQUEST["password"], $_REQUEST["descripcion"], 1, time(), null, $oUsuario->T01_Perfil);
+            $consulta=<<<SQL
+                INSERT INTO T01_Usuario(T01_CodUsuario, T01_Password, T01_DescUsuario, T01_NumConexiones, T01_FechaHoraUltimaConexion) 
+                VALUES ('{$codUsuario}', SHA2('{$codUsuario}{$password}', 256), '{$descripcion}', 1, '{$oDateTime->format("y-m-d h:i:s")}');
+            SQL;
+            
+            if(DBPDO::ejecutarConsulta($consulta)){
+                return new Usuario($codUsuario, $password, $descripcion, 1, $oDateTime->format("y-m-d h:i:s"), null, "usuario");
             }else{
                 return false;
             }
-            
-            
         }
         
         public static function validarCodNoExiste($codUsuario){
-            $consulta="SELECT * FROM T01_Usuario WHERE T01_CodUsuario='{$codUsuario}'";
+            $consulta="SELECT T01_CodUsuario FROM T01_Usuario WHERE T01_CodUsuario='{$codUsuario}'";
             
             $oResultado=DBPDO::ejecutarConsulta($consulta);
             

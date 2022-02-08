@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
     * Clase de construcción de objetos palabraa
     * 
     * 
@@ -14,7 +14,7 @@
         public $origen;
         public $significados;
 
-        /*
+        /**
         * Constructor de objetos palabra
         * 
         * Obtiene la palabra, origen y significados y crea un objeto

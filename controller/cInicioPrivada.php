@@ -22,7 +22,7 @@
     }
     
     if(isset($_REQUEST['detalle'])){
-        $_SESSION['paginaAnterior'] = 'inicio';
+        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso'] = 'detalle';
         header('location: ./index.php');
         exit;
@@ -37,15 +37,22 @@
     }
     
     if(isset($_REQUEST['mtoDep'])){
-        $_SESSION['paginaAnterior'] = 'inicio';
-        $_SESSION['paginaEnCurso'] = 'WIP';
+        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso'] = 'mantenimiento';
         header('location: ./index.php');
         exit;
     }
     
     if(isset($_REQUEST['rest'])){
-        $_SESSION['paginaAnterior'] = 'inicio';
+        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso'] = 'rest';
+        header('location: ./index.php');
+        exit;
+    }
+    
+    if(isset($_REQUEST['editar'])){
+        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso'] = 'WIP';//editar
         header('location: ./index.php');
         exit;
     }
