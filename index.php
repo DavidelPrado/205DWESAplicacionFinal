@@ -20,15 +20,9 @@
     }
 
     if(isset($_REQUEST['tecnologias'])){
-        if(isset($_SESSION['paginaEnCurso'])){
-            $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-        }else{
-            $_SESSION['paginaAnterior'] = 'inicioPublica';
-        }
-        
+        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso'] = 'tecnologias';
     }
-
 
     include $aControladores[$_SESSION['paginaEnCurso']];
  ?>

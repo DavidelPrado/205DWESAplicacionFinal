@@ -23,7 +23,7 @@
     //Definir constantes
     define("OBLIGATORIO", 1);
     define("OPCIONAL", 0);
-    define("MIN_TAMANIO", 0);
+    define("MIN_TAMANIO", 4);
     
     //Conexion con la base de datos.
     include 'config/confDB.php';
@@ -38,7 +38,11 @@
         'error' => 'controller/cError.php',
         'rest' => 'controller/cREST.php',
         'registro' => 'controller/cRegistro.php',
-        'tecnologias' => 'controller/cTecnologias.php'
+        'tecnologias' => 'controller/cTecnologias.php',
+        'editar' => 'controller/cMiCuenta.php',
+        'mantenimiento' => 'controller/cMtoDepartamentos.php',
+        'borrar' => 'controller/cBorrarCuenta.php',
+        'cambiar' => 'controller/cCambiarPassword.php'
     ];
 
     //Array de las vistas
@@ -52,6 +56,10 @@
         'error' => 'view/vError.php',
         'rest' => 'view/vREST.php',
         'registro' => 'view/vRegistro.php',
-        'tecnologias' => 'view/vTecnologias.php'
+        'tecnologias' => 'view/vTecnologias.php',
+        'editar' => 'view/vMiCuenta.php',
+        'mantenimiento' => 'view/vMtoDepartamentos.php',
+        'borrar' => 'view/vBorrarCuenta.php',
+        'cambiar' => 'view/vCambiarPassword.php'
     ];
 ?>

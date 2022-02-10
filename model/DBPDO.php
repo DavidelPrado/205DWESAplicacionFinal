@@ -1,13 +1,22 @@
 <?php
     /**
+    * Conexion con la base de datos y ejecucion de una consulta utilizando PDO
+    * 
+    * 
     * @author: David del Prado Losada
     * @since: 02/01/2022
     * @version: v1.0
-    * 
-    * Conexion con la base de datos y ejecucion de la consulta utilizando PDO
     */
 
     class DBPDO implements DB{
+        /**
+        * Ejecuta consulta sql en PDO
+        * 
+        * Obtiene la consulta que debe ejecutar y los parametros, si los hay.
+        * 
+        * @param String $consulta Consulta sql que se debe ejecutar
+        * @param String $parametros Parametros de la consulta
+        */
         public static function ejecutarConsulta($consulta, $parametros=null){
             try{
                 //Conectar a la base de datos

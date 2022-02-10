@@ -31,7 +31,3 @@ table img{
 form{
     text-align: center;
 }
-
-.vREST + footer{
-    position: relative;
-}
