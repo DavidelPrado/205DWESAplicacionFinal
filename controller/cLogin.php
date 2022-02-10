@@ -29,8 +29,9 @@
             $oUsuario = UsuarioPDO::validarUsuario($_REQUEST["usuario"], $_REQUEST["password"]);
             if(!$oUsuario){
                 $entradaOK=false;
+            }else{
+                $entradaOK=true;
             }
-            $entradaOK=true;
         }
     }else{
         //El formulario no se ha rellenado nunca

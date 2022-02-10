@@ -31,7 +31,7 @@
         * @param String $palabra Palabra de la que queremos obtener los significados
         */
         public static function buscarPalabra($idioma, $palabra){
-            $oJSON= file_get_contents("https://api.dictionaryapi.dev/api/v2/entries/{$idioma}/{$palabra}");
+            $oJSON=file_get_contents("https://api.dictionaryapi.dev/api/v2/entries/{$idioma}/{$palabra}");
             
             $salida=json_decode($oJSON)[0];
             

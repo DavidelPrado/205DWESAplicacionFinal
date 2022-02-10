@@ -9,6 +9,13 @@
     */
 
     class DepartamentoPDO{
+        /**
+        * Busca un departamento utilizando un codigo
+        * 
+        * Obtiene el codigo de un departamento y lo busca en la base de datos, si existe lo devuelve como un objeto
+        * 
+        * @param String $codDepartamento Codigo que queremos buscar en la base de datos
+        */
         public static function buscaDepartamentoPorCod($codDepartamento){
             $consulta = <<<PDO
                 SELECT * FROM T02_Departamento
@@ -25,8 +32,27 @@
             }
         }
         
-        public static function buscaDepartamentoPorDesc(){
+        /**
+        * Busca un departamento utilizando la descripción
+        * 
+        * Obtiene la descripcion de un departamento y la busca en la base de datos, si existe lo devuelve como un objeto
+        * 
+        * @param String $descDepartamento Descripcion que queremos buscar en la base de datos
+        */
+        public static function buscaDepartamentoPorDesc($descDepartamento){
+            $consulta = <<<PDO
+                SELECT * FROM T02_Departamento
+                WHERE T02_DescDepartamento LIKE '{$descDepartamento}';
+            PDO;
+                
+            $oResultado = DBPDO::ejecutarConsulta($consulta);
             
+            if($oResultado->rowCount()>0){
+                return $oResultado->fetchObject();;
+                //return new Departamento($oDepartamento->T02_CodDepartamento, $oDepartamento->T02_DescDepartamento, $oDepartamento->T02_FechaCreacionDepartamento, $oDepartamento->T02_VolumenDeNegocio, $oDepartamento->T02_FechaBajaDepartamento);
+            }else{
+                return false;
+            }   
         }
         
         public static function altaDepartamento(){

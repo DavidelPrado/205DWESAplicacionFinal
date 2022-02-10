@@ -16,18 +16,25 @@
     
     //Definir array para almacenar errores
     $aErrores=[
-        "codigo"=>null,
+        "descripcion"=>null,
     ];
     
     if(isset($_REQUEST['enviar'])){
         $entradaOK=true;
         //Comprobar si los campos son correctos
-        $aErrores["codigo"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["codigo"], 255, MIN_TAMANIO, OPCIONAL); 
-
+        $aErrores["descripcion"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["descripcion"], 255, MIN_TAMANIO, OPCIONAL); 
         
+        if($aErrores["descripcion"]==null){
+            $oDepartamento = DepartamentoPDO::buscaDepartamentoPorDesc($_REQUEST["descripcion"]);
+            if(!$oDepartamento){
+                $aErrores["descripcion"]="No se ha encontrado ningun departamento";
+                $entradaOK=false;
+            }
+        }
     }else{
         $entradaOK=false;
     }
 
+    
     include $aVistas['layout'];
 ?>

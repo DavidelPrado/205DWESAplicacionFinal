@@ -8,13 +8,13 @@
 <form method="post">
     <fieldset>
         <fieldset>
-            <label>Codigo:</label>
-            <input type='text' name='codigo' value="<?php
+            <label>Descripcion:</label>
+            <input type='text' name='descripcion' value="<?php
                 //Mostrar los datos correctos introducidos en un intento anterior
-                echo isset($_REQUEST["codigo"]) ? $_REQUEST["codigo"] : "";
+                echo isset($_REQUEST["descripcion"]) ? $_REQUEST["descripcion"] : "";
             ?>"/><?php
                 //Mostrar los errores en la descripcion, si los hay
-                echo $aErrores["codigo"]!=null ? $aErrores["codigo"] : "";
+                echo $aErrores["descripcion"]!=null ? $aErrores["descripcion"] : "";
             ?>
             <input type='submit' name='enviar' value='Enviar'/>
         </fieldset>
@@ -25,7 +25,23 @@
                 <th>FechaBaja</th>
                 <th>VolumenNegocio</th>
             </tr>
-            
+            <?php
+            if(isset($oDepartamento)){
+                while($oDepartamento){
+                    echo '<tr>';
+                    foreach ($oDepartamento as $valor) {
+                        echo "<td>$valor</td>";
+                    }
+                    ?>
+                        <td><a href="./MtoDepartamentosModificar.php"><img src="../img/lapiz.png"></img></a></td>
+                        <td><a><img src="../img/papelera.png" heigth="30px"></img></a></td>
+                        <td><a><img src="../img/ojo.png" width="30px"></img></a></td>
+                    <?php
+                    echo '</tr>';
+                    $oDepartamento=$oResultado->fetchObject();
+                }
+            }
+            ?>
         </table>
     </fieldset>
 </form>
