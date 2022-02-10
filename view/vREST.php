@@ -6,31 +6,41 @@
             <input type='submit' name='volver' value='Volver'/>
         </form>
     </header><br>
-    <!--
-    <form method="post">
-        <input type='submit' name='usuario' value='Generar usuario'/>
-    </form>-->
     
-    <form method="post">
-        <legend><h2>Diccionario:</h2></legend>
+    <div class="formularios">
+        <form method="post">
+            <legend><h2>Diccionario:</h2></legend>
 
-        <label>Palabra:</label><br>
-        <input type='text' name='palabra' value="<?php
-        //Mostrar los datos correctos introducidos en un intento anterior
-        echo isset($_REQUEST["palabra"]) ? $_REQUEST["palabra"] : "";
-        ?>"/><br><br>
-        
-        <label>Idioma:</label><br>
-        <select name="idioma">
-            <option value="ES">Español</option>
-            <option value="EN">Ingles</option>
-            <option value="FR">Frances</option>
-        </select>
-        
-        <br><br>
-        <input type='submit' name='buscar' value='Buscar'/>
-        
-    </form>
+            <label>Palabra:</label><br>
+            <input type='text' name='palabra' value="<?php
+            //Mostrar los datos correctos introducidos en un intento anterior
+            echo isset($_REQUEST["palabra"]) ? $_REQUEST["palabra"] : "";
+            ?>"/><br><br>
+
+            <label>Idioma:</label><br>
+            <select name="idioma">
+                <option value="ES">Español</option>
+                <option value="EN">Ingles</option>
+                <option value="FR">Frances</option>
+            </select>
+
+            <br><br>
+            <input type='submit' name='buscar' value='Buscar'/>
+        </form>
+
+        <form method="post">
+            <legend><h2>Buscar departamento por codigo:</h2></legend>
+
+            <label>Codigo:</label><br>
+            <input type='text' name='codDepartamento' value="<?php
+            //Mostrar los datos correctos introducidos en un intento anterior
+            echo isset($_REQUEST["codDepartamento"]) ? $_REQUEST["codDepartamento"] : "";
+            ?>"/><br><br>
+
+            <input type='submit' name='buscarCodDep' value='Buscar'/>
+        </form>
+    </div>
+    
     
     <?php 
     if(isset($aVPalabra)){?>
@@ -69,6 +79,15 @@
         }
         ?>
     <?php
+    }
+    
+    if(isset($aDepartamento)){?>
+        <p>codDep: <?php print_r($aDepartamento["codDepartamento"]);?></p>
+        <p>descDep: <?php print_r($aDepartamento["descDepartamento"]);?></p>
+        <p>fechaAlta: <?php print_r($aDepartamento["fechaCreacionDepartamento"]);?></p>
+        <p>volNegocio: <?php print_r($aDepartamento["volumenDeNegocio"]);?></p>
+        <p>fechaBaja: <?php print_r($aDepartamento["fechaBajaDepartamento"]);?></p>
+        <?php
     }
     ?>
 </div>
