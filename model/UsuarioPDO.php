@@ -69,14 +69,34 @@
         }
         
         
-        public static function modificarUsuario(){
+        public static function modificarUsuario($oUsuario, $descUsuario){
+            $consulta="UPDATE T01_Usuario SET T01_DescUsuario='{$descUsuario}' WHERE T01_CodUsuario='{$oUsuario->getCodUsuario()}'";
             
+            $oUsuario->setDescUsuario($descUsuario);
+            
+            if(DBPDO::ejecutarConsulta($consulta)){
+                return $oUsuario;
+            }else{
+                return false;
+            }
+        }
+
+        public static function cambiarPassword($oUsuario, $password){
+            $consulta="UPDATE T01_Usuario SET T01_Password=SHA2('{$oUsuario->getCodUsuario()}{$password}', 256) WHERE T01_CodUsuario='{$oUsuario->getCodUsuario()}'";
+            
+            $oUsuario->setPassword($password);
+            
+            if(DBPDO::ejecutarConsulta($consulta)){
+                return $oUsuario;
+            }else{
+                return false;
+            }
         }
         
-        public static function borrarUsuario(){
+        public static function borrarUsuario($codUsuario){
+            $consulta="DELETE FROM T01_Usuario WHERE T01_CodUsuario='{$codUsuario}'";
             
+            $oResultado=DBPDO::ejecutarConsulta($consulta);
         }
-        
-        
     }
 ?>

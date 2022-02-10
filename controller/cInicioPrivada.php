@@ -28,14 +28,6 @@
         exit;
     }
     
-    if(isset($_REQUEST['error'])){
-        $consulta = <<<QUERY
-                SELECT * FROM tabla;
-                QUERY;
-        
-        DBPDO::ejecutarConsulta($consulta);
-    }
-    
     if(isset($_REQUEST['mtoDep'])){
         $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso'] = 'mantenimiento';
@@ -52,7 +44,7 @@
     
     if(isset($_REQUEST['editar'])){
         $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-        $_SESSION['paginaEnCurso'] = 'WIP';//editar
+        $_SESSION['paginaEnCurso'] = 'editar';
         header('location: ./index.php');
         exit;
     }

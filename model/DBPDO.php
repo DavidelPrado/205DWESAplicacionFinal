@@ -1,6 +1,6 @@
 <?php
     /**
-    * Conexion con la base de datos y ejecucion de la consulta utilizando PDO
+    * Conexion con la base de datos y ejecucion de una consulta utilizando PDO
     * 
     * 
     * @author: David del Prado Losada

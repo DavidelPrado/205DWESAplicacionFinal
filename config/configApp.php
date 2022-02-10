@@ -39,8 +39,10 @@
         'rest' => 'controller/cREST.php',
         'registro' => 'controller/cRegistro.php',
         'tecnologias' => 'controller/cTecnologias.php',
-        'editar' => 'controller/cEditar.php',
-        'mantenimiento' => 'controller/cMtoDepartamentos.php'
+        'editar' => 'controller/cMiCuenta.php',
+        'mantenimiento' => 'controller/cMtoDepartamentos.php',
+        'borrar' => 'controller/cBorrarCuenta.php',
+        'cambiar' => 'controller/cCambiarPassword.php'
     ];
 
     //Array de las vistas
@@ -55,7 +57,9 @@
         'rest' => 'view/vREST.php',
         'registro' => 'view/vRegistro.php',
         'tecnologias' => 'view/vTecnologias.php',
-        'editar' => 'view/vEditar.php',
-        'mantenimiento' => 'view/vMtoDepartamentos.php'
+        'editar' => 'view/vMiCuenta.php',
+        'mantenimiento' => 'view/vMtoDepartamentos.php',
+        'borrar' => 'view/vBorrarCuenta.php',
+        'cambiar' => 'view/vCambiarPassword.php'
     ];
 ?>

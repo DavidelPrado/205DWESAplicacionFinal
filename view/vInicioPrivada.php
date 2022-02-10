@@ -17,7 +17,6 @@
     <form method="post">
         <input type='submit' name='mtoDep' value='Mtn. Dep.'/>
         <input type='submit' name='detalle' value='Detalle'/>
-        <input type='submit' name='error' value='Provocar error'/>
         <input type='submit' name='rest' value='REST'/>
         <input type='submit' name='editar' value='Editar perfil'/>
     </form>

@@ -18,7 +18,7 @@ insert into T01_Usuario(T01_CodUsuario, T01_Password, T01_DescUsuario) VALUES
 
 -- Usuario administrador con el rol de administrador
 INSERT INTO T01_Usuario(T01_CodUsuario, T01_Password, T01_DescUsuario, T01_Perfil) VALUES
-    ('admin',SHA2('adminpaso',256),'Admin','administrador');
+('admin',SHA2('adminpaso',256),'Admin','administrador');
 
 --Insertar datos en la tabla Departamento
 insert into T02_Departamento(T02_CodDepartamento, T02_DescDepartamento, T02_VolumenDeNegocio, T02_FechaBajaDepartamento) VALUES 
