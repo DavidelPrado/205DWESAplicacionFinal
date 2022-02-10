@@ -34,5 +34,21 @@
             $this->volumenDeNegocio = $volumenDeNegocio;
             $this->$fechaBajaDepartamento = $fechaBajaDepartamento;
         }
+        
+        function getCodDepartamento(){
+            return $this->codDepartamento;
+        }
+        function getDescDepartamento(){
+            return $this->descDepartamento;
+        }
+        function getFechaCreacionDepartamento(){
+            return $this->fechaCreacionDepartamento;
+        }
+        function getVolumenDeNegocio(){
+            return $this->volumenDeNegocio;
+        }
+        function getFechaBajaDepartamento(){
+            return $this->fechaBajaDepartamento;
+        }
     }
 ?>

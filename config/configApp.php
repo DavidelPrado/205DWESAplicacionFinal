@@ -19,6 +19,8 @@
     include 'model/REST.php';
     include 'model/UsuarioAleatorio.php';
     include 'model/Palabra.php';
+    include 'model/Departamento.php';
+    include 'model/DepartamentoPDO.php';
     
     //Definir constantes
     define("OBLIGATORIO", 1);
