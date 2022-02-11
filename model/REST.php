@@ -38,7 +38,31 @@
             if(is_object($salida)){
                 return new Palabra($salida->word, $salida->origin??"Desconocido", $salida->meanings);
             }
+        }
+        
+        /**
+        * Llamada a una api de busqueda en una base de datos
+        * 
+        * Llama a una api que busca un departamento usando el codigo
+        * 
+        * @param String $codDepartamento Codigo del departamento a buscar
+        */
+        public static function buscarDepartamentoPorCodigo($codDepartamento){
+            $oJSON=file_get_contents("https://daw205.ieslossauces.es/205DWESAplicacionFinal/api/BuscarDepPorCodigo.php?codDepartamento={$codDepartamento}");
             
+            $salida=json_decode($oJSON, true);
+            
+            if(isset($salida["codDepartamento"])){
+                return new Departamento(
+                    $salida["codDepartamento"],
+                    $salida["descDepartamento"],
+                    $salida["fechaCreacionDepartamento"],
+                    $salida["volumenDeNegocio"],
+                    $salida["fechaBajaDepartamento"],
+                );
+            }else{
+                return null;
+            }
         }
     }
 ?>

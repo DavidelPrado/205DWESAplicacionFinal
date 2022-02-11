@@ -20,7 +20,8 @@
     //Definir array para almacenar errores
     $aErrores=[
         "palabra"=>null,
-        "idioma"=>null
+        "idioma"=>null,
+        "codDepartamento"=>null
     ];
     
     if(isset($_REQUEST['buscar'])){
@@ -47,7 +48,44 @@
         ];
     }
     
+
+    //Definir array para almacenar errores
+    $aErroresDep=[
+        "codDepartamento"=>null
+    ];
     
+    
+    
+    if(isset($_REQUEST['buscarCodDep'])){
+        $entradaOKDep=true;
+        
+        
+        $aErroresDep["codDepartamento"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["codDepartamento"], 3, 3, OBLIGATORIO);
+        
+        if($aErroresDep["codDepartamento"]!=null){
+            $aErroresDep["codDepartamento"]="El codigo no es valido";
+            $entradaOKDep=false;
+        }
+    }else{
+        $entradaOKDep = false;
+    }
+    
+    if($entradaOKDep){
+        $oDepartamento=REST::buscarDepartamentoPorCodigo($_REQUEST["codDepartamento"]);
+        $aDepartamento=[];
+        
+        if($oDepartamento!=null){
+            $aDepartamento=[
+                "codDepartamento"=>$oDepartamento->getCodDepartamento(),
+                "descDepartamento"=>$oDepartamento->getDescDepartamento(),
+                "fechaCreacionDepartamento"=>$oDepartamento->getFechaCreacionDepartamento(),
+                "volumenDeNegocio"=>$oDepartamento->getVolumenDeNegocio(),
+                "fechaBajaDepartamento"=>$oDepartamento->getFechaBajaDepartamento()
+            ];
+        }else{
+            $aDepartamento==null;
+        }
+    }
     
     include $aVistas['layout'];
 ?>
