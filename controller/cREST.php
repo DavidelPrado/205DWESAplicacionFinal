@@ -48,34 +48,43 @@
         ];
     }
     
-    
+
     //Definir array para almacenar errores
     $aErroresDep=[
         "codDepartamento"=>null
     ];
     
+    
+    
     if(isset($_REQUEST['buscarCodDep'])){
-        $entradaOK=true;
+        $entradaOKDep=true;
         
-        $aErroresDep["codDepartamento"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["codDepartamento"], 255, MIN_TAMANIO, OBLIGATORIO);
+        
+        $aErroresDep["codDepartamento"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["codDepartamento"], 3, 3, OBLIGATORIO);
         
         if($aErroresDep["codDepartamento"]!=null){
-            $entradaOK=false;
+            $aErroresDep["codDepartamento"]="El codigo no es valido";
+            $entradaOKDep=false;
         }
     }else{
-        $entradaOK = false;
+        $entradaOKDep = false;
     }
     
-    if($entradaOK){
+    if($entradaOKDep){
         $oDepartamento=REST::buscarDepartamentoPorCodigo($_REQUEST["codDepartamento"]);
+        $aDepartamento=[];
         
-        $aDepartamento=[
-            "codDepartamento"=>$oDepartamento->getCodDepartamento(),
-            "descDepartamento"=>$oDepartamento->getDescDepartamento(),
-            "fechaCreacionDepartamento"=>$oDepartamento->getFechaCreacionDepartamento(),
-            "volumenDeNegocio"=>$oDepartamento->getVolumenDeNegocio(),
-            "fechaBajaDepartamento"=>$oDepartamento->getFechaBajaDepartamento()
-        ];
+        if($oDepartamento!=null){
+            $aDepartamento=[
+                "codDepartamento"=>$oDepartamento->getCodDepartamento(),
+                "descDepartamento"=>$oDepartamento->getDescDepartamento(),
+                "fechaCreacionDepartamento"=>$oDepartamento->getFechaCreacionDepartamento(),
+                "volumenDeNegocio"=>$oDepartamento->getVolumenDeNegocio(),
+                "fechaBajaDepartamento"=>$oDepartamento->getFechaBajaDepartamento()
+            ];
+        }else{
+            $aDepartamento==null;
+        }
     }
     
     include $aVistas['layout'];

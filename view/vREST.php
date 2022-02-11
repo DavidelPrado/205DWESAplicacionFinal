@@ -15,7 +15,10 @@
             <input type='text' name='palabra' value="<?php
             //Mostrar los datos correctos introducidos en un intento anterior
             echo isset($_REQUEST["palabra"]) ? $_REQUEST["palabra"] : "";
-            ?>"/><br><br>
+            ?>"/><p><?php
+            //Mostrar los errores en el codDepartamento, si los hay
+            echo $aErrores["palabra"]!=null ? $aErrores["palabra"] : "";
+            ?></p>
 
             <label>Idioma:</label><br>
             <select name="idioma">
@@ -35,7 +38,10 @@
             <input type='text' name='codDepartamento' value="<?php
             //Mostrar los datos correctos introducidos en un intento anterior
             echo isset($_REQUEST["codDepartamento"]) ? $_REQUEST["codDepartamento"] : "";
-            ?>"/><br><br>
+            ?>"/><p><?php
+            //Mostrar los errores en el codDepartamento, si los hay
+            echo $aErroresDep["codDepartamento"]!=null ? $aErroresDep["codDepartamento"] : "";
+            ?></p>
 
             <input type='submit' name='buscarCodDep' value='Buscar'/>
         </form>
@@ -81,13 +87,23 @@
     <?php
     }
     
-    if(isset($aDepartamento)){?>
-        <p>codDep: <?php print_r($aDepartamento["codDepartamento"]);?></p>
-        <p>descDep: <?php print_r($aDepartamento["descDepartamento"]);?></p>
-        <p>fechaAlta: <?php print_r($aDepartamento["fechaCreacionDepartamento"]);?></p>
-        <p>volNegocio: <?php print_r($aDepartamento["volumenDeNegocio"]);?></p>
-        <p>fechaBaja: <?php print_r($aDepartamento["fechaBajaDepartamento"]);?></p>
+    if(isset($aDepartamento)){
+        if($aDepartamento==null){
+            ?><p>No se ha encontrado el departamento</p><?php
+        }else{
+        ?>
+        
+        <p>codDep: <?php echo $aDepartamento["codDepartamento"];?></p>
+        <p>descDep: <?php echo $aDepartamento["descDepartamento"];?></p>
+        <p>fechaAlta: <?php echo $aDepartamento["fechaCreacionDepartamento"];?></p>
+        <p>volNegocio: <?php echo $aDepartamento["volumenDeNegocio"];?></p>
         <?php
+            if($aDepartamento["fechaBajaDepartamento"]){
+        ?>
+        <p>fechaBaja: <?php echo $aDepartamento["fechaBajaDepartamento"];?></p>
+        <?php } ?>
+    <?php
+        }
     }
     ?>
 </div>
