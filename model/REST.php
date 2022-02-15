@@ -64,5 +64,30 @@
                 return null;
             }
         }
+        
+        /**
+        * Llamada a una api externa de busqueda en una base de datos
+        * 
+        * Llama a una api que busca un departamento usando el codigo
+        * 
+        * @param String $codDepartamento Codigo del departamento a buscar
+        */
+        public static function buscarDepartamentoPorCodigoExterno($codDepartamento){
+            $oJSON=file_get_contents("https://daw219.ieslossauces.es/219DWESAplicacionFinal21-22/api/consultaDepartamentoPorCodigo.php?codDepartamento={$codDepartamento}");
+            
+            $salida=json_decode($oJSON, true);
+            
+            if(isset($salida["respuesta"])!=false){
+                return new Departamento(
+                    $salida["codigo"],
+                    $salida["descripcion"],
+                    $salida["fechaAlta"],
+                    $salida["volumenNeg"],
+                    $salida["fechaBaja"],
+                );
+            }else{
+                return null;
+            }
+        }
     }
 ?>

@@ -23,6 +23,9 @@
                 ('amor',SHA2('amorpaso',256),'Amor'),
                 ('antonio',SHA2('antoniopaso',256),'Antonio'),
                 ('albertoB',SHA2('albertoBpaso',256),'AlbertoB');
+                
+            INSERT INTO T01_Usuario(T01_CodUsuario, T01_Password, T01_DescUsuario, T01_Perfil) VALUES
+                ('admin',SHA2('adminpaso',256),'Admin','administrador');
                     
             insert into T02_Departamento(T02_CodDepartamento, T02_DescDepartamento, T02_VolumenDeNegocio, T02_FechaBajaDepartamento) VALUES 
                 ('INF', 'Departamento de informatica', 1000.0, NULL),

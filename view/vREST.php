@@ -45,6 +45,21 @@
 
             <input type='submit' name='buscarCodDep' value='Buscar'/>
         </form>
+        
+        <form method="post">
+            <legend><h2>Buscar departamento por codigo(Sonia):</h2></legend>
+
+            <label>Codigo:</label><br>
+            <input type='text' name='codDepartamentoExt' value="<?php
+            //Mostrar los datos correctos introducidos en un intento anterior
+            echo isset($_REQUEST["codDepartamentoExt"]) ? $_REQUEST["codDepartamentoExt"] : "";
+            ?>"/><p><?php
+            //Mostrar los errores en el codDepartamento, si los hay
+            echo $aErroresDepExt["codDepartamentoExt"]!=null ? $aErroresDepExt["codDepartamentoExt"] : "";
+            ?></p>
+
+            <input type='submit' name='buscarCodDepExt' value='Buscar'/>
+        </form>
     </div>
     
     
@@ -105,5 +120,24 @@
     <?php
         }
     }
-    ?>
+    
+    if(isset($aDepartamentoExt)){
+        if($aDepartamentoExt==null){
+            ?><p>No se ha encontrado el departamento</p><?php
+        }else{
+        ?>
+        
+        <p>codDep: <?php echo $aDepartamentoExt["codDepartamento"];?></p>
+        <p>descDep: <?php echo $aDepartamentoExt["descDepartamento"];?></p>
+        <p>fechaAlta: <?php echo $aDepartamentoExt["fechaCreacionDepartamento"];?></p>
+        <p>volNegocio: <?php echo $aDepartamentoExt["volumenDeNegocio"];?></p>
+        <?php
+            if($aDepartamentoExt["fechaBajaDepartamento"]){
+        ?>
+        <p>fechaBaja: <?php echo $aDepartamentoExt["fechaBajaDepartamento"];?></p>
+        <?php } ?>
+    <?php
+        }
+    }
+    ?>    
 </div>

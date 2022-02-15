@@ -54,11 +54,8 @@
         "codDepartamento"=>null
     ];
     
-    
-    
     if(isset($_REQUEST['buscarCodDep'])){
         $entradaOKDep=true;
-        
         
         $aErroresDep["codDepartamento"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["codDepartamento"], 3, 3, OBLIGATORIO);
         
@@ -83,7 +80,42 @@
                 "fechaBajaDepartamento"=>$oDepartamento->getFechaBajaDepartamento()
             ];
         }else{
-            $aDepartamento==null;
+            $aDepartamento=null;
+        }
+    }
+    
+    //Definir array para almacenar errores
+    $aErroresDepExt=[
+        "codDepartamentoExt"=>null
+    ];
+    
+    if(isset($_REQUEST['buscarCodDepExt'])){
+        $entradaOKDepExt=true;
+        
+        $aErroresDepExt["codDepartamentoExt"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["codDepartamentoExt"], 3, 3, OBLIGATORIO);
+        
+        if($aErroresDepExt["codDepartamentoExt"]!=null){
+            $aErroresDepExt["codDepartamentoExt"]="El codigo no es valido";
+            $entradaOKDepExt=false;
+        }
+    }else{
+        $entradaOKDepExt = false;
+    }
+    
+    if($entradaOKDepExt){
+        $oDepartamento=REST::buscarDepartamentoPorCodigoExterno($_REQUEST["codDepartamentoExt"]);
+        $aDepartamentoExt=[];
+        
+        if($oDepartamento!=null){
+            $aDepartamentoExt=[
+                "codDepartamento"=>$oDepartamento->getCodDepartamento(),
+                "descDepartamento"=>$oDepartamento->getDescDepartamento(),
+                "fechaCreacionDepartamento"=>$oDepartamento->getFechaCreacionDepartamento(),
+                "volumenDeNegocio"=>$oDepartamento->getVolumenDeNegocio(),
+                "fechaBajaDepartamento"=>$oDepartamento->getFechaBajaDepartamento()
+            ];
+        }else{
+            $aDepartamentoExt=null;
         }
     }
     
