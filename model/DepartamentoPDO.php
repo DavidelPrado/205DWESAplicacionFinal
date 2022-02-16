@@ -19,14 +19,20 @@
         public static function buscaDepartamentoPorCod($codDepartamento){
             $consulta = <<<PDO
                 SELECT * FROM T02_Departamento
-                WHERE T02_CodDepartamento='{$codDepartamento}';
+                WHERE T02_CodDepartamento='%{$codDepartamento}%';
             PDO;
             
             $oResultado = DBPDO::ejecutarConsulta($consulta);
             $oDepartamento=$oResultado->fetchObject();
             
             if($oDepartamento){
-                return new Departamento($oDepartamento->T02_CodDepartamento, $oDepartamento->T02_DescDepartamento, $oDepartamento->T02_FechaCreacionDepartamento, $oDepartamento->T02_VolumenDeNegocio, $oDepartamento->T02_FechaBajaDepartamento);
+                return new Departamento(
+                    $oDepartamento->T02_CodDepartamento, 
+                    $oDepartamento->T02_DescDepartamento, 
+                    $oDepartamento->T02_FechaCreacionDepartamento, 
+                    $oDepartamento->T02_VolumenDeNegocio, 
+                    $oDepartamento->T02_FechaBajaDepartamento
+                );
             }else{
                 return false;
             }
@@ -39,17 +45,26 @@
         * 
         * @param String $descDepartamento Descripcion que queremos buscar en la base de datos
         */
-        public static function buscaDepartamentoPorDesc($descDepartamento){
+        public static function buscaDepartamentoPorDesc($descDepartamento=""){
             $consulta = <<<PDO
-                SELECT * FROM T02_Departamento
-                WHERE T02_DescDepartamento LIKE '{$descDepartamento}';
+                SELECT * FROM T02_Departamento WHERE T02_DescDepartamento LIKE '%{$descDepartamento}%';
             PDO;
                 
             $oResultado = DBPDO::ejecutarConsulta($consulta);
+            $aDepartamentos=$oResultado->fetchAll();
+            if($aDepartamentos){
+                $aResultado=[];
             
-            if($oResultado->rowCount()>0){
-                return $oResultado->fetchObject();;
-                //return new Departamento($oDepartamento->T02_CodDepartamento, $oDepartamento->T02_DescDepartamento, $oDepartamento->T02_FechaCreacionDepartamento, $oDepartamento->T02_VolumenDeNegocio, $oDepartamento->T02_FechaBajaDepartamento);
+                foreach($aDepartamentos as $oDepartamento){
+                    $aResultado[$oDepartamento["T02_CodDepartamento"]]=new Departamento(
+                        $oDepartamento["T02_CodDepartamento"], 
+                        $oDepartamento["T02_DescDepartamento"], 
+                        $oDepartamento["T02_FechaCreacionDepartamento"], 
+                        $oDepartamento["T02_VolumenDeNegocio"], 
+                        $oDepartamento["T02_FechaBajaDepartamento"]
+                    );
+                }
+                return $aResultado;
             }else{
                 return false;
             }   

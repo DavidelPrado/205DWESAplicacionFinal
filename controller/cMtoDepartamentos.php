@@ -19,22 +19,35 @@
         "descripcion"=>null,
     ];
     
+    $entradaOK=true;
+    
     if(isset($_REQUEST['enviar'])){
-        $entradaOK=true;
-        //Comprobar si los campos son correctos
-        $aErrores["descripcion"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["descripcion"], 255, MIN_TAMANIO, OPCIONAL); 
         
-        if($aErrores["descripcion"]==null){
-            $oDepartamento = DepartamentoPDO::buscaDepartamentoPorDesc($_REQUEST["descripcion"]);
-            if(!$oDepartamento){
-                $aErrores["descripcion"]="No se ha encontrado ningun departamento";
-                $entradaOK=false;
-            }
+        //Comprobar si los campos son correctos
+        $aErrores["descripcion"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["descripcion"], 255, 1, OPCIONAL); 
+        
+        if($aErrores["descripcion"]!=null){
+            $entradaOK=false;
         }
     }else{
         $entradaOK=false;
     }
-
     
+    $aVDepartamentos=[];
+    $oDepartamentos=DepartamentoPDO::buscaDepartamentoPorDesc($_REQUEST["descripcion"]??"");
+
+    if($oDepartamentos){
+        foreach($oDepartamentos as $departamento){
+            array_push($aVDepartamentos, [
+                "CodDepartamento"=>$departamento->getCodDepartamento(),
+                "DescDepartamento"=>$departamento->getDescDepartamento(),
+                "FechaCreacionDepartamento"=>$departamento->getFechaCreacionDepartamento(),
+                "VolumenDeNegocio"=>$departamento->getVolumenDeNegocio(),
+                "FechaBajaDepartamento"=>$departamento->getFechaBajaDepartamento()
+            ]);
+        }
+    }else{
+        $aErrores["descripcion"]="No se ha encontrado el departamento";
+    }
     include $aVistas['layout'];
 ?>

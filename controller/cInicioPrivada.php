@@ -30,7 +30,7 @@
     
     if(isset($_REQUEST['mtoDep'])){
         $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-        $_SESSION['paginaEnCurso'] = 'WIP';
+        $_SESSION['paginaEnCurso'] = 'mantenimiento';
         header('location: ./index.php');
         exit;
     }
