@@ -72,3 +72,24 @@ p{
 .vREST .formularios form legend{
     text-decoration: underline;
 }
+
+.vDetalle + footer{
+    display: none;
+}
+
+.botones *{
+    color: white;
+    width: 240px;
+    height: 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: rgb(120, 120, 120);
+    border-color: black;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.borrar{
+    background-color: rgb(233, 87, 87);
+    border-color: red;
+}

@@ -35,6 +35,9 @@
         ?>" disabled/><br><br><br>
 
         <h2>¿Estas seguro?</h2>
-        <input type='submit' name='aceptar' value='Aceptar'/><br>
+        
+        <div class="botones">
+            <input class="borrar" type='submit' name='aceptar' value='Aceptar'/>
+        </div>
     </form>
 </div>

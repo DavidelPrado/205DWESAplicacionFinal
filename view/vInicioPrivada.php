@@ -15,7 +15,12 @@
     ?>
     <br><br>
     <form method="post">
-        <input type='submit' name='mtoDep' value='Mtn. Dep.'/>
+        <?php if($_SESSION["usuarioDAW205AplicacionFinal"]->getPerfil()=="usuario"){ ?>
+            <input type='submit' name='mtoDep' value='Mtn. Dep.'/>
+        <?php } ?>
+        <?php if($_SESSION["usuarioDAW205AplicacionFinal"]->getPerfil()=="administrador"){ ?>
+            <input type='submit' name='mtoUsuarios' value='Mtn. Usuarios'/>
+        <?php } ?>
         <input type='submit' name='detalle' value='Detalle'/>
         <input type='submit' name='rest' value='REST'/>
         <input type='submit' name='editar' value='Editar perfil'/>

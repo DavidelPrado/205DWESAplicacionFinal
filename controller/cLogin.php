@@ -20,6 +20,8 @@
         exit;
     }
     
+    $entradaOK=true;
+    
     if(isset($_REQUEST['login'])){
         $aErrores["usuario"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["usuario"], 255, MIN_TAMANIO, OBLIGATORIO);
         $aErrores["password"]=validacionFormularios::validarPassword($_REQUEST["password"], 8, MIN_TAMANIO, 1, OBLIGATORIO);
@@ -29,9 +31,9 @@
             $oUsuario = UsuarioPDO::validarUsuario($_REQUEST["usuario"], $_REQUEST["password"]);
             if(!$oUsuario){
                 $entradaOK=false;
-            }else{
-                $entradaOK=true;
             }
+        }else{
+            $entradaOK=false;
         }
     }else{
         //El formulario no se ha rellenado nunca

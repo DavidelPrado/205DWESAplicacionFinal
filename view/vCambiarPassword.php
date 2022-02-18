@@ -30,6 +30,8 @@
             echo $aErrores["repetirPasswordNueva"]!=null ? $aErrores["repetirPasswordNueva"] : "";
         ?></p><br>
 
-        <input type='submit' name='aceptar' value='Aceptar'/><br>
+        <div class="botones">
+            <input type='submit' name='aceptar' value='Aceptar'/>
+        </div>
     </form>
 </div>
