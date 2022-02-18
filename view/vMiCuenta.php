@@ -34,11 +34,12 @@
         <label>Fecha última conexión:</label><br>
         <input type='text' name='fecha' value="<?php
             echo $fecha;
-        ?>" disabled/><br><br><br>
+        ?>" disabled/><br><br>
 
-
-        <input type='submit' name='aceptar' value='Aceptar'/><br>
-        <input type='submit' name='borrar' value='Borrar cuenta'/><br>
-        <input type='submit' name='cambiar' value='Cambiar contraseña'/>
+        <div class="botones">
+            <input type='submit' name='aceptar' value='Aceptar'/><br>
+            <input class="borrar" type='submit' name='borrar' value='Borrar cuenta'/><br>
+            <input type='submit' name='cambiar' value='Cambiar contraseña'/>
+        </div>
     </form>
 </div>

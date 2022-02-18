@@ -35,6 +35,13 @@
         exit;
     }
     
+    if(isset($_REQUEST['mtoUsuarios'])){
+        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso'] = 'WIP';
+        header('location: ./index.php');
+        exit;
+    }
+    
     if(isset($_REQUEST['rest'])){
         $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso'] = 'rest';
