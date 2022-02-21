@@ -42,9 +42,11 @@
         'registro' => 'controller/cRegistro.php',
         'tecnologias' => 'controller/cTecnologias.php',
         'editar' => 'controller/cMiCuenta.php',
-        'mantenimiento' => 'controller/cMtoDepartamentos.php',
         'borrar' => 'controller/cBorrarCuenta.php',
-        'cambiar' => 'controller/cCambiarPassword.php'
+        'cambiar' => 'controller/cCambiarPassword.php',
+        'mantenimiento' => 'controller/cMtoDepartamentos.php',
+        'eliminar' => 'controller/cEliminarDepartamento.php',
+        'alta' => 'controller/cAltaDepartamento.php'
     ];
 
     //Array de las vistas
@@ -60,8 +62,10 @@
         'registro' => 'view/vRegistro.php',
         'tecnologias' => 'view/vTecnologias.php',
         'editar' => 'view/vMiCuenta.php',
-        'mantenimiento' => 'view/vMtoDepartamentos.php',
         'borrar' => 'view/vBorrarCuenta.php',
-        'cambiar' => 'view/vCambiarPassword.php'
+        'cambiar' => 'view/vCambiarPassword.php',
+        'mantenimiento' => 'view/vMtoDepartamentos.php',
+        'eliminar' => 'view/vEliminarDepartamento.php',
+        'alta' => 'view/vAltaDepartamento.php'
     ];
 ?>

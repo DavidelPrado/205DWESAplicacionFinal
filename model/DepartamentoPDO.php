@@ -19,7 +19,7 @@
         public static function buscaDepartamentoPorCod($codDepartamento){
             $consulta = <<<PDO
                 SELECT * FROM T02_Departamento
-                WHERE T02_CodDepartamento='%{$codDepartamento}%';
+                WHERE T02_CodDepartamento='{$codDepartamento}';
             PDO;
             
             $oResultado = DBPDO::ejecutarConsulta($consulta);
@@ -70,28 +70,69 @@
             }   
         }
         
-        public static function altaDepartamento(){
+        public static function altaDepartamento($codDepartamento, $descripcion, $volumen){
+            $oDateTime = new DateTime();
             
+            $consulta=<<<SQL
+                INSERT INTO T02_Departamento(T02_CodDepartamento, T02_DescDepartamento, T02_FechaCreacionDepartamento, T02_VolumenDeNegocio) 
+                VALUES ('{$codDepartamento}', '{$descripcion}', '{$oDateTime->format("y-m-d h:i:s")}', '{$volumen}');
+            SQL;
+            
+            if(DBPDO::ejecutarConsulta($consulta)){
+                return new Departamento($codDepartamento, $descripcion, $oDateTime->format("y-m-d h:i:s"), $volumen);
+            }else{
+                return false;
+            }
         }
         
-        public static function bajafisicaDepartamento(){
+        /**
+        * Busca un departamento utilizando el codigo y lo elimina
+        * 
+        * Obtiene el código de un departamento y lo elimina
+        * 
+        * @param String $codDepartamento Codigo del departamento que queremos eliminar
+        */
+        public static function bajafisicaDepartamento($codDepartamento){
+            $consulta="DELETE FROM T02_Departamento WHERE T02_CodDepartamento='{$codDepartamento}'";
             
+            $oResultado=DBPDO::ejecutarConsulta($consulta);
+
+            return $oResultado;
         }
         
         public static function bajaLogicaDepartamento(){
             
         }
         
-        public static function modificaDepartamento(){
+        public static function modificarDepartamento($oDepartamento, $descDepartamento, $volumenDeNegocio){
+            $consulta=<<<PDO
+                UPDATE T02_Departamento SET T02_DescDepartamento='{$descDepartamento}' 
+                AND T02_VolumenDeNegocio='{$volumenDeNegocio}'
+                WHERE T02_CodDepartamento='{$oDepartamento->getCodDepartamento()}'"
+            PDO;
             
+            $oDepartamento->setDescDepartamento($descDepartamento);
+            $oDepartamento->setVolumenDeNegocio($volumenDeNegocio);
+            
+            if(DBPDO::ejecutarConsulta($consulta)){
+                return $oDepartamento;
+            }else{
+                return false;
+            }
+
+
         }
         
         public static function rehabilitaDepartamento(){
             
         }
         
-        public static function validaCodNoExiste(){
+        public static function validaCodNoExiste($codDepartamento){
+            $consulta="SELECT T02_CodDepartamento FROM T02_Departamento WHERE T02_CodDepartamento='{$codDepartamento}'";
             
+            $oResultado=DBPDO::ejecutarConsulta($consulta);
+            
+            return $oResultado->fetchObject();
         }
     }
 ?>

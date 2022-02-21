@@ -7,6 +7,7 @@
 </header>
 <form method="post">
     <fieldset>
+        <input type="submit" name="alta" value="Alta"/>
         <fieldset>
             <label>Descripción:</label>
             <input type='text' name='descripcion' value="<?php
@@ -38,10 +39,17 @@
                         <td><?php echo $departamento["VolumenDeNegocio"]; ?></td>
                         <td><?php echo $departamento["FechaBajaDepartamento"]; ?></td>
 
-                        <td><a><img src="./img/lapiz.png"></img></a></td>
-                        <td><a><img src="./img/papelera.png" heigth="30px"></img></a></td>
+                        <td>
+                            <img src="./img/lapiz.png"></img>
+                        </td>
+
                         <td><a><img src="./img/ojo.png" width="30px"></img></a></td>
-                    
+
+                        <td>
+                            <button type="submit" name="eliminar" value="<?php echo $departamento["CodDepartamento"]; ?>">
+                                <img src="./img/papelera.png" width="30px"></img>
+                            </button>
+                        </td>
                     </tr>
                     <?php
                 }
