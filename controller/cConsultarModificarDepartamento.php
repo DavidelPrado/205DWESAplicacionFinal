@@ -1,38 +1,48 @@
 <?php
     /**
     * @author: David del Prado Losada
-    * @since: 19/02/2022
+    * @since: 21/02/2022
     * @version: v1.0
     * 
-    * Controlador de la ventana de alta de departamentos
+    * Controlador de la ventana de modificación de departamentos
     */
     
-    if(isset($_REQUEST['cancelar'])){
+    if(isset($_REQUEST['volver'])){
         $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso'] = 'mantenimiento';
         header('location: ./index.php');
         exit;
     }
     
-    $aErrores=[
-        'codDepartamento'=>null,
-        'descripcion'=>null,
-        'volumen'=>null
-    ];
+    $oDepartamento=DepartamentoPDO::buscaDepartamentoPorCod($_SESSION["codDepartamento"]);
 
-    if(isset($_REQUEST['crear'])){
+    if($oDepartamento){
+        $aVDepartamento=[
+            'codDepartamento'=>$oDepartamento->getCodDepartamento(),
+            'descripcion'=>$oDepartamento->getDescDepartamento(),
+            'fecha'=>$oDepartamento->getFechaCreacionDepartamento(),
+            'volumen'=>$oDepartamento->getVolumenDeNegocio()
+        ];
+    }
+
+    //Definir array para almacenar errores
+    $aErrores=[
+        "descripcion"=>null,
+        "volumen"=>null
+    ];
+    
+    if(isset($_REQUEST['aceptar'])){
         //Inicializar variable que controlara si los campos estan correctos
         $entradaOK=true;
         
-        $aErrores["codDepartamento"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["codDepartamento"], 3, 3, OBLIGATORIO);
         $aErrores["descripcion"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["descripcion"], 255, MIN_TAMANIO, OBLIGATORIO);
         $aErrores["volumen"]=validacionFormularios::comprobarEntero($_REQUEST["volumen"], 10000, 0, OBLIGATORIO);
 
-        if($aErrores["codDepartamento"]==null && $aErrores["descripcion"]==null && $aErrores["volumen"]==null){
-            $oUsuario=UsuarioPDO::validarCodNoExiste($_REQUEST["codDepartamento"]);
-            if($oUsuario){
-                $aErrores["codDepartamento"]="El departamento ya existe";
-                $entradaOK = false;
+        if($aErrores["descripcion"]==null && $aErrores["volumen"]==null){
+            $departamento=DepartamentoPDO::modificarDepartamento($oDepartamento->getCodDepartamento(), $_REQUEST["descripcion"], $_REQUEST["volumen"]);
+        
+            if($departamento==null){
+                $entradaOK=false;
             }
         }else{
             $entradaOK=false;
@@ -41,7 +51,9 @@
         $entradaOK = false;
     }
     
+    
     if($entradaOK){
+        
         $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso'] = 'mantenimiento';
         header('location: ./index.php');

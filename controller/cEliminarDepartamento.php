@@ -24,8 +24,6 @@
             'volumen'=>$oDepartamento->getVolumenDeNegocio()
         ];
     }
-    
-    
 
     if(isset($_REQUEST['aceptar'])){
         DepartamentoPDO::bajafisicaDepartamento($_SESSION["codDepartamento"]);

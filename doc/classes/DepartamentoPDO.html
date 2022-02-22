@@ -153,14 +153,14 @@
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Da de alta un departamento</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/DepartamentoPDO.html#method_bajafisicaDepartamento">bajafisicaDepartamento()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Busca un departamento utilizando el codigo y lo elimina</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/DepartamentoPDO.html#method_bajaLogicaDepartamento">bajaLogicaDepartamento()</a>
@@ -184,11 +184,11 @@
 <dd>Busca un departamento utilizando la descripción</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/DepartamentoPDO.html#method_modificaDepartamento">modificaDepartamento()</a>
+    <a href="classes/DepartamentoPDO.html#method_modificarDepartamento">modificarDepartamento()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Modifica un departamento</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/DepartamentoPDO.html#method_rehabilitaDepartamento">rehabilitaDepartamento()</a>
@@ -202,7 +202,7 @@
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+<dd>Valida que un codigo de departamento no existe</dd>
 
         </dl>
 
@@ -230,16 +230,49 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="model/DepartamentoPDO.php"><a href="files/model-departamentopdo.html"><abbr title="model/DepartamentoPDO.php">DepartamentoPDO.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Da de alta un departamento</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">altaDepartamento</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">altaDepartamento</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$codDepartamento</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$descDepartamento</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$volumenDeNegocio</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
-    
+        <section class="phpdocumentor-description"><p>Da de alta un departamento utilizando codigo, descripcion y volumen.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$codDepartamento</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Codigo identificador del departamento</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$descDepartamento</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Descripcion del departamento</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$volumenDeNegocio</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Volumen de negocio del departamento</p>
+</section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -262,16 +295,31 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="model/DepartamentoPDO.php"><a href="files/model-departamentopdo.html"><abbr title="model/DepartamentoPDO.php">DepartamentoPDO.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">104</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Busca un departamento utilizando el codigo y lo elimina</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">bajafisicaDepartamento</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">bajafisicaDepartamento</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$codDepartamento</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
-    
+        <section class="phpdocumentor-description"><p>Obtiene el código de un departamento y lo elimina</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$codDepartamento</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Codigo del departamento que queremos eliminar</p>
+</section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -294,7 +342,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="model/DepartamentoPDO.php"><a href="files/model-departamentopdo.html"><abbr title="model/DepartamentoPDO.php">DepartamentoPDO.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">112</span>
 </aside>
 
     
@@ -373,14 +421,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="model/DepartamentoPDO.php"><a href="files/model-departamentopdo.html"><abbr title="model/DepartamentoPDO.php">DepartamentoPDO.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">42</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 </aside>
 
         <p class="phpdocumentor-summary">Busca un departamento utilizando la descripción</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">buscaDepartamentoPorDesc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$descDepartamento</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">buscaDepartamentoPorDesc</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$descDepartamento</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&quot;&quot;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"><p>Obtiene la descripcion de un departamento y la busca en la base de datos, si existe lo devuelve como un objeto</p>
 </section>
@@ -390,7 +438,7 @@
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$descDepartamento</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">&quot;&quot;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Descripcion que queremos buscar en la base de datos</p>
 </section>
@@ -413,23 +461,56 @@
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_modificaDepartamento">
-        modificaDepartamento()
-        <a href="classes/DepartamentoPDO.html#method_modificaDepartamento" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_modificarDepartamento">
+        modificarDepartamento()
+        <a href="classes/DepartamentoPDO.html#method_modificarDepartamento" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="model/DepartamentoPDO.php"><a href="files/model-departamentopdo.html"><abbr title="model/DepartamentoPDO.php">DepartamentoPDO.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">70</span>
+    <span class="phpdocumentor-element-found-in__line">125</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Modifica un departamento</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">modificaDepartamento</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">modificarDepartamento</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$codDepartamento</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$descDepartamento</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$volumenDeNegocio</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
-    
+        <section class="phpdocumentor-description"><p>Modifica la descripcion y volumen de un departamento.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$codDepartamento</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Codigo identificador del departamento</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$descDepartamento</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Descripcion del departamento</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$volumenDeNegocio</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Volumen de negocio del departamento</p>
+</section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -452,7 +533,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="model/DepartamentoPDO.php"><a href="files/model-departamentopdo.html"><abbr title="model/DepartamentoPDO.php">DepartamentoPDO.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">135</span>
 </aside>
 
     
@@ -484,16 +565,31 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="model/DepartamentoPDO.php"><a href="files/model-departamentopdo.html"><abbr title="model/DepartamentoPDO.php">DepartamentoPDO.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">146</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Valida que un codigo de departamento no existe</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">validaCodNoExiste</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">validaCodNoExiste</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$codDepartamento</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
-    
+        <section class="phpdocumentor-description"><p>Obtiene el codigo de un departamento y lo busca en la base de datos, si existe lo devuelve</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$codDepartamento</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Codigo que queremos buscar en la base de datos</p>
+</section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>

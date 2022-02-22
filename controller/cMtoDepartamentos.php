@@ -22,6 +22,15 @@
         header('location: ./index.php');
         exit;
     }
+    
+    if(isset($_REQUEST['modificar'])){
+        $_SESSION["codDepartamento"]=$_REQUEST["modificar"];
+
+        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso'] = 'WIP';
+        header('location: ./index.php');
+        exit;
+    }
 
     if(isset($_REQUEST['alta'])){
         $_SESSION["codDepartamento"]=$_REQUEST["alta"];

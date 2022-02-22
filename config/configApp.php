@@ -46,7 +46,8 @@
         'cambiar' => 'controller/cCambiarPassword.php',
         'mantenimiento' => 'controller/cMtoDepartamentos.php',
         'eliminar' => 'controller/cEliminarDepartamento.php',
-        'alta' => 'controller/cAltaDepartamento.php'
+        'alta' => 'controller/cAltaDepartamento.php',
+        'modificar' => 'controller/cConsultarModificarDepartamento.php'
     ];
 
     //Array de las vistas
@@ -66,6 +67,7 @@
         'cambiar' => 'view/vCambiarPassword.php',
         'mantenimiento' => 'view/vMtoDepartamentos.php',
         'eliminar' => 'view/vEliminarDepartamento.php',
-        'alta' => 'view/vAltaDepartamento.php'
+        'alta' => 'view/vAltaDepartamento.php',
+        'modificar' => 'view/vConsultarModificarDepartamento.php'
     ];
 ?>
