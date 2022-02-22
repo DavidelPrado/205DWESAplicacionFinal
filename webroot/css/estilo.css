@@ -77,7 +77,7 @@ p{
     display: none;
 }
 
-.botones *{
+.botones *, .alta{
     color: white;
     width: 240px;
     height: 40px;

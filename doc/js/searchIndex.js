@@ -396,6 +396,11 @@ Search.appendIndex(
             "summary": "Llamada\u0020a\u0020una\u0020api\u0020de\u0020busqueda\u0020en\u0020una\u0020base\u0020de\u0020datos",
             "url": "classes/REST.html#method_buscarDepartamentoPorCodigo"
         },                {
+            "fqsen": "\\REST\u003A\u003AbuscarDepartamentoPorCodigoExterno\u0028\u0029",
+            "name": "buscarDepartamentoPorCodigoExterno",
+            "summary": "Llamada\u0020a\u0020una\u0020api\u0020externa\u0020de\u0020busqueda\u0020en\u0020una\u0020base\u0020de\u0020datos",
+            "url": "classes/REST.html#method_buscarDepartamentoPorCodigoExterno"
+        },                {
             "fqsen": "\\UsuarioAleatorio",
             "name": "UsuarioAleatorio",
             "summary": "Clase\u0020de\u0020construccion\u0020de\u0020objetos\u0020de\u0020usuarios\u0020aleatorios",
@@ -501,6 +506,31 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Departamento.html#method_getFechaBajaDepartamento"
         },                {
+            "fqsen": "\\Departamento\u003A\u003AsetCodDepartamento\u0028\u0029",
+            "name": "setCodDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_setCodDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AsetDescDepartamento\u0028\u0029",
+            "name": "setDescDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_setDescDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AsetFechaCreacionDepartamento\u0028\u0029",
+            "name": "setFechaCreacionDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_setFechaCreacionDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AsetVolumenDeNegocio\u0028\u0029",
+            "name": "setVolumenDeNegocio",
+            "summary": "",
+            "url": "classes/Departamento.html#method_setVolumenDeNegocio"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AsetFechaBajaDepartamento\u0028\u0029",
+            "name": "setFechaBajaDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_setFechaBajaDepartamento"
+        },                {
             "fqsen": "\\Departamento\u003A\u003A\u0024codDepartamento",
             "name": "codDepartamento",
             "summary": "",
@@ -543,12 +573,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\DepartamentoPDO\u003A\u003AaltaDepartamento\u0028\u0029",
             "name": "altaDepartamento",
-            "summary": "",
+            "summary": "Da\u0020de\u0020alta\u0020un\u0020departamento",
             "url": "classes/DepartamentoPDO.html#method_altaDepartamento"
         },                {
             "fqsen": "\\DepartamentoPDO\u003A\u003AbajafisicaDepartamento\u0028\u0029",
             "name": "bajafisicaDepartamento",
-            "summary": "",
+            "summary": "Busca\u0020un\u0020departamento\u0020utilizando\u0020el\u0020codigo\u0020y\u0020lo\u0020elimina",
             "url": "classes/DepartamentoPDO.html#method_bajafisicaDepartamento"
         },                {
             "fqsen": "\\DepartamentoPDO\u003A\u003AbajaLogicaDepartamento\u0028\u0029",
@@ -556,10 +586,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/DepartamentoPDO.html#method_bajaLogicaDepartamento"
         },                {
-            "fqsen": "\\DepartamentoPDO\u003A\u003AmodificaDepartamento\u0028\u0029",
-            "name": "modificaDepartamento",
-            "summary": "",
-            "url": "classes/DepartamentoPDO.html#method_modificaDepartamento"
+            "fqsen": "\\DepartamentoPDO\u003A\u003AmodificarDepartamento\u0028\u0029",
+            "name": "modificarDepartamento",
+            "summary": "Modifica\u0020un\u0020departamento",
+            "url": "classes/DepartamentoPDO.html#method_modificarDepartamento"
         },                {
             "fqsen": "\\DepartamentoPDO\u003A\u003ArehabilitaDepartamento\u0028\u0029",
             "name": "rehabilitaDepartamento",
@@ -568,7 +598,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\DepartamentoPDO\u003A\u003AvalidaCodNoExiste\u0028\u0029",
             "name": "validaCodNoExiste",
-            "summary": "",
+            "summary": "Valida\u0020que\u0020un\u0020codigo\u0020de\u0020departamento\u0020no\u0020existe",
             "url": "classes/DepartamentoPDO.html#method_validaCodNoExiste"
         },                {
             "fqsen": "\\",

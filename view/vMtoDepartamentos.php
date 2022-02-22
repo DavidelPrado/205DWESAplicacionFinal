@@ -7,6 +7,7 @@
 </header>
 <form method="post">
     <fieldset>
+        <input class="alta" type="submit" name="alta" value="Alta"/>
         <fieldset>
             <label>Descripción:</label>
             <input type='text' name='descripcion' value="<?php
@@ -20,12 +21,14 @@
         </fieldset>
         <table>
             <tr>
-                <th>Codigo</th>
-                <th>Descripcion</th>
-                <th>Fecha de creacion</th>
+                <th>Código</th>
+                <th>Descripción</th>
+                <th>Fecha de creación</th>
                 <th>Volumen de negocio</th>
                 <th>Fecha de baja</th>
-                <th colspan="3">Botones</th>
+                <th>Modificar departamento</th>
+                <th>Alta/Baja</th>
+                <th>Eliminar departamento</th>
             </tr>
             <?php
             if(isset($aVDepartamentos)){
@@ -38,10 +41,19 @@
                         <td><?php echo $departamento["VolumenDeNegocio"]; ?></td>
                         <td><?php echo $departamento["FechaBajaDepartamento"]; ?></td>
 
-                        <td><a><img src="./img/lapiz.png"></img></a></td>
-                        <td><a><img src="./img/papelera.png" heigth="30px"></img></a></td>
+                        <td>
+                            <button type="submit" name="modificar" value="<?php echo $departamento["CodDepartamento"]; ?>">
+                                <img src="./img/lapiz.png" width="30px"></img>
+                            </button>
+                        </td>
+
                         <td><a><img src="./img/ojo.png" width="30px"></img></a></td>
-                    
+
+                        <td>
+                            <button type="submit" name="eliminar" value="<?php echo $departamento["CodDepartamento"]; ?>">
+                                <img src="./img/papelera.png" width="30px"></img>
+                            </button>
+                        </td>
                     </tr>
                     <?php
                 }

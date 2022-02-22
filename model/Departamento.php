@@ -50,5 +50,21 @@
         function getFechaBajaDepartamento(){
             return $this->fechaBajaDepartamento;
         }
+
+        function setCodDepartamento($codDepartamento){
+            $this->codDepartamento=$codDepartamento;
+        }
+        function setDescDepartamento($descDepartamento){
+            $this->descDepartamento=$descDepartamento;
+        }
+        function setFechaCreacionDepartamento($fechaCreacionDepartamento){
+            $this->fechaCreacionDepartamento=$fechaCreacionDepartamento;
+        }
+        function setVolumenDeNegocio($volumenDeNegocio){
+            $this->volumenDeNegocio=$volumenDeNegocio;
+        }
+        function setFechaBajaDepartamento($fechaBajaDepartamento){
+            $this->fechaBajaDepartamento=$fechaBajaDepartamento;
+        }
     }
 ?>
