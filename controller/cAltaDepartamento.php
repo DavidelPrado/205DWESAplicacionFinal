@@ -29,19 +29,21 @@
         $aErrores["volumen"]=validacionFormularios::comprobarEntero($_REQUEST["volumen"], 10000, 0, OBLIGATORIO);
 
         if($aErrores["codDepartamento"]==null && $aErrores["descripcion"]==null && $aErrores["volumen"]==null){
-            $oUsuario=UsuarioPDO::validarCodNoExiste($_REQUEST["codDepartamento"]);
-            if($oUsuario){
+            $oDepartamento= DepartamentoPDO::validaCodNoExiste($_REQUEST["codDepartamento"]);
+            if($oDepartamento){
                 $aErrores["codDepartamento"]="El departamento ya existe";
-                $entradaOK = false;
+                $entradaOK=false;
             }
         }else{
             $entradaOK=false;
         }
     }else{
-        $entradaOK = false;
+        $entradaOK=false;
     }
     
     if($entradaOK){
+        DepartamentoPDO::altaDepartamento($_REQUEST["codDepartamento"], $_REQUEST["descripcion"], $_REQUEST["volumen"]);
+        
         $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso'] = 'mantenimiento';
         header('location: ./index.php');
