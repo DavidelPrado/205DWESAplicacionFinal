@@ -10,13 +10,15 @@
         <input class="alta" type="submit" name="alta" value="Alta"/>
         <fieldset>
             <label>Descripción:</label>
-            <input type='text' name='descripcion' value="<?php
-                //Mostrar los datos correctos introducidos en un intento anterior
-                echo isset($_REQUEST["descripcion"]) ? $_REQUEST["descripcion"] : "";
-            ?>"/><?php
-                //Mostrar los errores en la descripcion, si los hay
-                echo $aErrores["descripcion"]!=null ? $aErrores["descripcion"] : "";
-            ?>
+            <input type='text' name='descripcion'/>
+            
+            <input name="criterioBusqueda" type="radio" value="todos" checked/>
+            <label>Todos</label>
+            <input name="criterioBusqueda" type="radio" value="alta"/>
+            <label>Alta</label>
+            <input name="criterioBusqueda" type="radio" value="baja"/>
+            <label>Baja</label>
+            
             <input type='submit' name='enviar' value='Enviar'/>
         </fieldset>
         <table>
@@ -27,7 +29,6 @@
                 <th>Volumen de negocio</th>
                 <th>Fecha de baja</th>
                 <th>Modificar departamento</th>
-                <th>Alta/Baja</th>
                 <th>Eliminar departamento</th>
             </tr>
             <?php
@@ -46,8 +47,6 @@
                                 <img src="./img/lapiz.png" width="30px"></img>
                             </button>
                         </td>
-
-                        <td><a><img src="./img/ojo.png" width="30px"></img></a></td>
 
                         <td>
                             <button type="submit" name="eliminar" value="<?php echo $departamento["CodDepartamento"]; ?>">

@@ -44,16 +44,17 @@
     //Definir array para almacenar errores
     $aErrores=[
         "descripcion"=>null,
+        "criterioBusqueda"=>null
     ];
     
     $entradaOK=true;
     
     if(isset($_REQUEST['enviar'])){
-        
         //Comprobar si los campos son correctos
-        $aErrores["descripcion"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["descripcion"], 255, 1, OPCIONAL); 
+        $aErrores["descripcion"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["descripcion"], 255, 1, OPCIONAL);
+        $aErrores["criterioBusqueda"]=validacionFormularios::validarElementoEnLista($_REQUEST["criterioBusqueda"], ["todos", "alta", "baja"]);
         
-        if($aErrores["descripcion"]!=null){
+        if($aErrores["descripcion"]!=null && $aErrores["criterioBusqueda"]){
             $entradaOK=false;
         }
     }else{
@@ -61,7 +62,7 @@
     }
     
     $aVDepartamentos=[];
-    $oDepartamentos=DepartamentoPDO::buscaDepartamentoPorDesc($_REQUEST["descripcion"]??"");
+    $oDepartamentos=DepartamentoPDO::buscaDepartamentoPorDesc($_REQUEST["descripcion"]??"", $_REQUEST["criterioBusqueda"]??"todos");
 
     if($oDepartamentos){
         foreach($oDepartamentos as $departamento){
