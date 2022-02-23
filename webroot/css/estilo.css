@@ -93,3 +93,24 @@ p{
     background-color: rgb(233, 87, 87);
     border-color: red;
 }
+
+.paginacion{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    margin-top: 10px;
+}
+.paginacion button, .botonImg{
+    background: none;
+    border: none;
+}
+
+.paginacion div{
+    width: 20px;
+    font-size: 1.7rem;
+}
+
+.paginacion button img{
+    height: 30px;
+    width: 30px;
+}

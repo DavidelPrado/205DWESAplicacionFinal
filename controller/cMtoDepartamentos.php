@@ -41,6 +41,34 @@
         exit;
     }
 
+    //Paginacion
+    if (isset($_REQUEST['primera'])) {
+        $_SESSION['numPagina']=1;
+
+        header('Location: index.php');
+        exit;
+    }
+    
+    if (isset($_REQUEST['anterior']) && $_SESSION['numPagina']>=2) {
+        $_SESSION['numPagina']--;
+
+        header('Location: index.php');
+        exit;
+    }
+
+    if (isset($_REQUEST['siguiente'])) {
+        $_SESSION['numPagina']++;
+
+        header('Location: index.php');
+        exit;
+    }
+
+    if (isset($_REQUEST['ultima'])) {
+
+        header('Location: index.php');
+        exit;
+    }
+
     //Definir array para almacenar errores
     $aErrores=[
         "descripcion"=>null,
@@ -61,8 +89,11 @@
         $entradaOK=false;
     }
     
+    if(!isset($_SESSION["numPagina"])){
+        $_SESSION["numPagina"]=1;
+    }
     $aVDepartamentos=[];
-    $oDepartamentos=DepartamentoPDO::buscaDepartamentoPorDesc($_REQUEST["descripcion"]??"", $_REQUEST["criterioBusqueda"]??"todos");
+    $oDepartamentos=DepartamentoPDO::buscaDepartamentoPorDesc($_REQUEST["descripcion"]??"", $_REQUEST["criterioBusqueda"]??"todos", $_SESSION["numPagina"]);
 
     if($oDepartamentos){
         foreach($oDepartamentos as $departamento){

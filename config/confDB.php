@@ -1,17 +1,17 @@
 <?php
     //Conexión casa
-    /*
-    define("HOST", 'mysql:host=localhost; dbname=db205dwesloginlogout'); 
-    define("USER", 'root');
-    define("PASSWORD", 'paso');
-    */
-
-    //Conexión desarrollo
     
-    define("HOST", 'mysql:host=daw205.sauces.local; dbname=DB205DWESLoginLogout'); 
+    define("HOST", 'mysql:host=localhost; dbname=db205dwesloginlogout'); 
     define("USER", 'user205DWESLoginLogout');
     define("PASSWORD", 'P@ssw0rd');
     
+
+    //Conexión desarrollo
+    /*
+    define("HOST", 'mysql:host=daw205.sauces.local; dbname=DB205DWESLoginLogout'); 
+    define("USER", 'user205DWESLoginLogout');
+    define("PASSWORD", 'P@ssw0rd');
+    */
     
     //Conexión con 1&1
     /*

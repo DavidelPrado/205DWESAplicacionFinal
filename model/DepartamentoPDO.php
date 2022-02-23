@@ -45,7 +45,8 @@
         * 
         * @param String $descDepartamento Descripción que queremos buscar en la base de datos
         */
-        public static function buscaDepartamentoPorDesc($descDepartamento="", $criterioBusqueda="todos"){
+        public static function buscaDepartamentoPorDesc($descDepartamento="", $criterioBusqueda="todos", $pagina=1){
+            $pagina=($pagina-1)*3;
             switch($criterioBusqueda){
                 case "todos":
                     $criterio="";
@@ -59,7 +60,9 @@
             }
             
             $consulta = <<<PDO
-                SELECT * FROM T02_Departamento WHERE T02_DescDepartamento LIKE '%{$descDepartamento}%'{$criterio};
+                SELECT * FROM T02_Departamento WHERE T02_DescDepartamento 
+                LIKE '%{$descDepartamento}%'{$criterio}
+                LIMIT 3 OFFSET {$pagina};
             PDO;
                 
             $oResultado = DBPDO::ejecutarConsulta($consulta);

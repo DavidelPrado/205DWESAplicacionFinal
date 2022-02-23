@@ -43,13 +43,13 @@
                         <td><?php echo $departamento["FechaBajaDepartamento"]; ?></td>
 
                         <td>
-                            <button type="submit" name="modificar" value="<?php echo $departamento["CodDepartamento"]; ?>">
+                            <button class="botonImg" type="submit" name="modificar" value="<?php echo $departamento["CodDepartamento"]; ?>">
                                 <img src="./img/lapiz.png" width="30px"></img>
                             </button>
                         </td>
 
                         <td>
-                            <button type="submit" name="eliminar" value="<?php echo $departamento["CodDepartamento"]; ?>">
+                            <button class="botonImg" type="submit" name="eliminar" value="<?php echo $departamento["CodDepartamento"]; ?>">
                                 <img src="./img/papelera.png" width="30px"></img>
                             </button>
                         </td>
@@ -59,5 +59,22 @@
             }
             ?>
         </table>
+        <div class="paginacion">
+            <button type="submit" name="primera" value="primera">
+                <img src="img/primera.png">
+            </button>
+            <button type="submit" name="anterior" value="anterior">
+                <img src="img/anterior.png">
+            </button>
+
+            <div><?php echo $_SESSION['numPagina']; ?></div>
+
+            <button type="submit" name="siguiente" value="siguiente">
+                <img src="img/siguiente.png">
+            </button>
+            <button type="submit" name="ultima" value="ultima">
+                <img src="img/ultima.png">
+            </button>
+        </div>
     </fieldset>
 </form>

@@ -25,7 +25,6 @@ create table T02_Departamento(
     primary key(T02_CodDepartamento)
 )ENGINE=INNODB;
 
-
 --Creacion de usuario
 create user 'user205DWESLoginLogout'@'%' identified by 'P@ssw0rd';
 grant all privileges on DB205DWESLoginLogout.* to 'user205DWESLoginLogout'@'%';
