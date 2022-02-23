@@ -23,16 +23,16 @@
         * 
         * @param String $codDepartamento Codigo identificador del departamento
         * @param String $descDepartamento Descripcion del departamento
-        * @param String $fechaCreacionDepartamento Fecha y hora de la creacion del departamento
+        * @param TimeStamp $fechaCreacionDepartamento Fecha y hora de la creacion del departamento
         * @param String $volumenDeNegocio volumenDeNegocio
-        * @param String $fechaBajaDepartamento Fecha y hora de la baja del departamento
+        * @param TimeStamp $fechaBajaDepartamento Fecha y hora de la baja del departamento
         */
         function __construct($codDepartamento, $descDepartamento, $fechaCreacionDepartamento, $volumenDeNegocio, $fechaBajaDepartamento=null) {
             $this->codDepartamento = $codDepartamento;
             $this->descDepartamento = $descDepartamento;
             $this->fechaCreacionDepartamento = $fechaCreacionDepartamento;
             $this->volumenDeNegocio = $volumenDeNegocio;
-            $this->$fechaBajaDepartamento = $fechaBajaDepartamento;
+            $this->fechaBajaDepartamento = $fechaBajaDepartamento;
         }
         
         function getCodDepartamento(){

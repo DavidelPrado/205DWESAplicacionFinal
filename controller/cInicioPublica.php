@@ -8,7 +8,7 @@
     */
 
     if(isset($_REQUEST['iniciar'])){
-        $_SESSION['paginaEnCurso'] = 'login';
+        $_SESSION['paginaEnCurso']='login';
         header('location: ./index.php');
         exit;
     }

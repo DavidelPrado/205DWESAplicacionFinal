@@ -32,7 +32,7 @@
 
     //Array de los controladores
     $aControladores = [
-        'inicioPublica' => 'controller/cInicioPublica.php',
+        'inicioPublico' => 'controller/cInicioPublica.php',
         'login' => 'controller/cLogin.php',
         'inicio' => 'controller/cInicioPrivada.php',
         'detalle' => 'controller/cDetalle.php',
@@ -52,7 +52,7 @@
 
     //Array de las vistas
     $aVistas = [
-        'inicioPublica' => 'view/vInicioPublica.php',
+        'inicioPublico' => 'view/vInicioPublica.php',
         'layout' => 'view/Layout.php',
         'login' => 'view/vLogin.php',
         'inicio' => 'view/vInicioPrivada.php',

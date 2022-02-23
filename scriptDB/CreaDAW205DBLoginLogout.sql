@@ -21,10 +21,9 @@ create table T02_Departamento(
     T02_DescDepartamento varchar(255) NOT NULL,
     T02_FechaCreacionDepartamento timestamp,
     T02_VolumenDeNegocio float NULL,
-    T02_FechaBajaDepartamento date NULL,
+    T02_FechaBajaDepartamento timestamp NULL,
     primary key(T02_CodDepartamento)
 )ENGINE=INNODB;
-
 
 --Creacion de usuario
 create user 'user205DWESLoginLogout'@'%' identified by 'P@ssw0rd';

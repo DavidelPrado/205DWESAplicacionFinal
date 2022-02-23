@@ -41,27 +41,60 @@
         exit;
     }
 
+    //Paginacion
+    if(isset($_REQUEST['primera'])){
+        $_SESSION['numPagina']=1;
+
+        header('Location: index.php');
+        exit;
+    }
+    
+    if(isset($_REQUEST['anterior']) && $_SESSION['numPagina']>=2){
+        $_SESSION['numPagina']--;
+
+        header('Location: index.php');
+        exit;
+    }
+
+    if(isset($_REQUEST['siguiente'])){
+        $_SESSION['numPagina']++;
+
+        header('Location: index.php');
+        exit;
+    }
+
+    if(isset($_REQUEST['ultima'])){
+        
+
+        header('Location: index.php');
+        exit;
+    }
+
     //Definir array para almacenar errores
     $aErrores=[
         "descripcion"=>null,
+        "criterioBusqueda"=>null
     ];
     
     $entradaOK=true;
     
     if(isset($_REQUEST['enviar'])){
-        
         //Comprobar si los campos son correctos
-        $aErrores["descripcion"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["descripcion"], 255, 1, OPCIONAL); 
+        $aErrores["descripcion"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["descripcion"], 255, 1, OPCIONAL);
+        $aErrores["criterioBusqueda"]=validacionFormularios::validarElementoEnLista($_REQUEST["criterioBusqueda"], ["todos", "alta", "baja"]);
         
-        if($aErrores["descripcion"]!=null){
+        if($aErrores["descripcion"]!=null && $aErrores["criterioBusqueda"]){
             $entradaOK=false;
         }
     }else{
         $entradaOK=false;
     }
     
+    if(!isset($_SESSION["numPagina"])){
+        $_SESSION["numPagina"]=1;
+    }
     $aVDepartamentos=[];
-    $oDepartamentos=DepartamentoPDO::buscaDepartamentoPorDesc($_REQUEST["descripcion"]??"");
+    $oDepartamentos=DepartamentoPDO::buscaDepartamentoPorDesc($_REQUEST["descripcion"]??"", $_REQUEST["criterioBusqueda"]??"todos", $_SESSION["numPagina"]);
 
     if($oDepartamentos){
         foreach($oDepartamentos as $departamento){

@@ -43,11 +43,26 @@
         * 
         * Obtiene la descripcion de un departamento y la busca en la base de datos, si existe lo devuelve como un objeto
         * 
-        * @param String $descDepartamento Descripcion que queremos buscar en la base de datos
+        * @param String $descDepartamento Descripción que queremos buscar en la base de datos
         */
-        public static function buscaDepartamentoPorDesc($descDepartamento=""){
+        public static function buscaDepartamentoPorDesc($descDepartamento="", $criterioBusqueda="todos", $pagina=1){
+            $pagina=($pagina-1)*3;
+            switch($criterioBusqueda){
+                case "todos":
+                    $criterio="";
+                    break;
+                case "alta":
+                    $criterio="AND T02_FechaBajaDepartamento IS NULL";
+                    break;
+                case "baja":
+                    $criterio="AND T02_FechaBajaDepartamento IS NOT NULL";
+                    break;
+            }
+            
             $consulta = <<<PDO
-                SELECT * FROM T02_Departamento WHERE T02_DescDepartamento LIKE '%{$descDepartamento}%';
+                SELECT * FROM T02_Departamento WHERE T02_DescDepartamento 
+                LIKE '%{$descDepartamento}%'{$criterio}
+                LIMIT 3 OFFSET {$pagina};
             PDO;
                 
             $oResultado = DBPDO::ejecutarConsulta($consulta);
@@ -101,7 +116,7 @@
         * 
         * @param String $codDepartamento Codigo del departamento que queremos eliminar
         */
-        public static function bajafisicaDepartamento($codDepartamento){
+        public static function bajaFisicaDepartamento($codDepartamento){
             $consulta="DELETE FROM T02_Departamento WHERE T02_CodDepartamento='{$codDepartamento}'";
             
             $oResultado=DBPDO::ejecutarConsulta($consulta);

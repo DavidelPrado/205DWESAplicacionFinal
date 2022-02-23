@@ -30,6 +30,8 @@
             insert into T02_Departamento(T02_CodDepartamento, T02_DescDepartamento, T02_VolumenDeNegocio, T02_FechaBajaDepartamento) VALUES 
                 ('INF', 'Departamento de informatica', 1000.0, NULL),
                 ('CIE', 'Departamento de ciencia', 2000.0, NULL),
+                ('DAW', 'Departamento de DAW', 4000.0, NULL),
+                ('DIW', 'Departamento de DIW', 2000.0, NULL),
                 ('HIS', 'Departamento de historia', 1000.0, NULL);
         PDO;
         

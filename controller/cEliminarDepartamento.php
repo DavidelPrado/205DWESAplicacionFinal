@@ -26,7 +26,7 @@
     }
 
     if(isset($_REQUEST['aceptar'])){
-        DepartamentoPDO::bajafisicaDepartamento($_SESSION["codDepartamento"]);
+        DepartamentoPDO::bajaFisicaDepartamento($_SESSION["codDepartamento"]);
 
         $_SESSION['paginaEnCurso'] = 'mantenimiento';
         header('location: ./index.php');
