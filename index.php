@@ -15,9 +15,15 @@
     //Se inicia o recupera la sesión
     session_start();
 
-    if(!isset($_SESSION['paginaEnCurso'])){
-        $_SESSION['paginaEnCurso'] = 'inicioPublica';
+    if(isset($_SESSION['paginaEnCurso'])){
+        if(isset($_SESSION[""])){
+            
+        }
+    }else{
+        $_SESSION['paginaEnCurso'] = 'inicioPublico';
     }
+    
+    
 
     if(isset($_REQUEST['tecnologias'])){
         $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];

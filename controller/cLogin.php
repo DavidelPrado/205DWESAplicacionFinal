@@ -9,7 +9,7 @@
 
     if(isset($_REQUEST['cancelar'])){
         session_destroy();
-        include $aControladores['inicioPublica'];
+        include $aControladores['inicioPublico'];
         header('location: ./index.php');
         exit;
     }

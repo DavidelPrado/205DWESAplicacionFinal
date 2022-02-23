@@ -42,28 +42,29 @@
     }
 
     //Paginacion
-    if (isset($_REQUEST['primera'])) {
+    if(isset($_REQUEST['primera'])){
         $_SESSION['numPagina']=1;
 
         header('Location: index.php');
         exit;
     }
     
-    if (isset($_REQUEST['anterior']) && $_SESSION['numPagina']>=2) {
+    if(isset($_REQUEST['anterior']) && $_SESSION['numPagina']>=2){
         $_SESSION['numPagina']--;
 
         header('Location: index.php');
         exit;
     }
 
-    if (isset($_REQUEST['siguiente'])) {
+    if(isset($_REQUEST['siguiente'])){
         $_SESSION['numPagina']++;
 
         header('Location: index.php');
         exit;
     }
 
-    if (isset($_REQUEST['ultima'])) {
+    if(isset($_REQUEST['ultima'])){
+        
 
         header('Location: index.php');
         exit;
