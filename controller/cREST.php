@@ -54,6 +54,7 @@
         "codDepartamento"=>null
     ];
     
+    
     if(isset($_REQUEST['buscarCodDep'])){
         $entradaOKDep=true;
         
