@@ -67,7 +67,7 @@
                 <img src="img/anterior.png">
             </button>
 
-            <div><?php echo $_SESSION['numPagina']; ?></div>
+            <p><?php echo $_SESSION['numPagina']; ?></p>
 
             <button type="submit" name="siguiente" value="siguiente">
                 <img src="img/siguiente.png">
