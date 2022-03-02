@@ -17,7 +17,6 @@
     include 'model/UsuarioPDO.php';
     include 'model/AppError.php';
     include 'model/REST.php';
-    include 'model/UsuarioAleatorio.php';
     include 'model/Palabra.php';
     include 'model/Departamento.php';
     include 'model/DepartamentoPDO.php';

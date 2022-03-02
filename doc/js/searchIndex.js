@@ -318,37 +318,37 @@ Search.appendIndex(
         },                {
             "fqsen": "\\UsuarioPDO\u003A\u003AvalidarUsuario\u0028\u0029",
             "name": "validarUsuario",
-            "summary": "",
+            "summary": "Comprueba\u0020que\u0020el\u0020usuario\u0020no\u0020existe\u0020en\u0020la\u0020base\u0020de\u0020datos",
             "url": "classes/UsuarioPDO.html#method_validarUsuario"
         },                {
             "fqsen": "\\UsuarioPDO\u003A\u003AregistrarUltimaConexion\u0028\u0029",
             "name": "registrarUltimaConexion",
-            "summary": "",
+            "summary": "Registra\u0020una\u0020nueva\u0020conexion",
             "url": "classes/UsuarioPDO.html#method_registrarUltimaConexion"
         },                {
             "fqsen": "\\UsuarioPDO\u003A\u003AaltaUsuario\u0028\u0029",
             "name": "altaUsuario",
-            "summary": "",
+            "summary": "Registra\u0020un\u0020nuevo\u0020usuario\u0020en\u0020la\u0020base\u0020de\u0020datos",
             "url": "classes/UsuarioPDO.html#method_altaUsuario"
         },                {
             "fqsen": "\\UsuarioPDO\u003A\u003AvalidarCodNoExiste\u0028\u0029",
             "name": "validarCodNoExiste",
-            "summary": "",
+            "summary": "Comprueba\u0020que\u0020el\u0020codigo\u0020no\u0020existe",
             "url": "classes/UsuarioPDO.html#method_validarCodNoExiste"
         },                {
             "fqsen": "\\UsuarioPDO\u003A\u003AmodificarUsuario\u0028\u0029",
             "name": "modificarUsuario",
-            "summary": "",
+            "summary": "Modificar\u0020el\u0020usuario",
             "url": "classes/UsuarioPDO.html#method_modificarUsuario"
         },                {
             "fqsen": "\\UsuarioPDO\u003A\u003AcambiarPassword\u0028\u0029",
             "name": "cambiarPassword",
-            "summary": "",
+            "summary": "Cambiar\u0020contrase\u00F1a\u0020de\u0020un\u0020usuario",
             "url": "classes/UsuarioPDO.html#method_cambiarPassword"
         },                {
             "fqsen": "\\UsuarioPDO\u003A\u003AborrarUsuario\u0028\u0029",
             "name": "borrarUsuario",
-            "summary": "",
+            "summary": "Elimina\u0020un\u0020usuario\u0020de\u0020la\u0020base\u0020de\u0020datos",
             "url": "classes/UsuarioPDO.html#method_borrarUsuario"
         },                {
             "fqsen": "\\Palabra",
@@ -381,11 +381,6 @@ Search.appendIndex(
             "summary": "Modelo\u0020de\u0020las\u0020apiREST\u0020utilizadas",
             "url": "classes/REST.html"
         },                {
-            "fqsen": "\\REST\u003A\u003AusuarioAleatorio\u0028\u0029",
-            "name": "usuarioAleatorio",
-            "summary": "",
-            "url": "classes/REST.html#method_usuarioAleatorio"
-        },                {
             "fqsen": "\\REST\u003A\u003AbuscarPalabra\u0028\u0029",
             "name": "buscarPalabra",
             "summary": "Llamada\u0020a\u0020una\u0020api\u0020diccionario",
@@ -400,76 +395,6 @@ Search.appendIndex(
             "name": "buscarDepartamentoPorCodigoExterno",
             "summary": "Llamada\u0020a\u0020una\u0020api\u0020externa\u0020de\u0020busqueda\u0020en\u0020una\u0020base\u0020de\u0020datos",
             "url": "classes/REST.html#method_buscarDepartamentoPorCodigoExterno"
-        },                {
-            "fqsen": "\\UsuarioAleatorio",
-            "name": "UsuarioAleatorio",
-            "summary": "Clase\u0020de\u0020construccion\u0020de\u0020objetos\u0020de\u0020usuarios\u0020aleatorios",
-            "url": "classes/UsuarioAleatorio.html"
-        },                {
-            "fqsen": "\\UsuarioAleatorio\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/UsuarioAleatorio.html#method___construct"
-        },                {
-            "fqsen": "\\UsuarioAleatorio\u003A\u003A\u0024gender",
-            "name": "gender",
-            "summary": "",
-            "url": "classes/UsuarioAleatorio.html#property_gender"
-        },                {
-            "fqsen": "\\UsuarioAleatorio\u003A\u003A\u0024name",
-            "name": "name",
-            "summary": "",
-            "url": "classes/UsuarioAleatorio.html#property_name"
-        },                {
-            "fqsen": "\\UsuarioAleatorio\u003A\u003A\u0024location",
-            "name": "location",
-            "summary": "",
-            "url": "classes/UsuarioAleatorio.html#property_location"
-        },                {
-            "fqsen": "\\UsuarioAleatorio\u003A\u003A\u0024email",
-            "name": "email",
-            "summary": "",
-            "url": "classes/UsuarioAleatorio.html#property_email"
-        },                {
-            "fqsen": "\\UsuarioAleatorio\u003A\u003A\u0024login",
-            "name": "login",
-            "summary": "",
-            "url": "classes/UsuarioAleatorio.html#property_login"
-        },                {
-            "fqsen": "\\UsuarioAleatorio\u003A\u003A\u0024dob",
-            "name": "dob",
-            "summary": "",
-            "url": "classes/UsuarioAleatorio.html#property_dob"
-        },                {
-            "fqsen": "\\UsuarioAleatorio\u003A\u003A\u0024registered",
-            "name": "registered",
-            "summary": "",
-            "url": "classes/UsuarioAleatorio.html#property_registered"
-        },                {
-            "fqsen": "\\UsuarioAleatorio\u003A\u003A\u0024phone",
-            "name": "phone",
-            "summary": "",
-            "url": "classes/UsuarioAleatorio.html#property_phone"
-        },                {
-            "fqsen": "\\UsuarioAleatorio\u003A\u003A\u0024cell",
-            "name": "cell",
-            "summary": "",
-            "url": "classes/UsuarioAleatorio.html#property_cell"
-        },                {
-            "fqsen": "\\UsuarioAleatorio\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "",
-            "url": "classes/UsuarioAleatorio.html#property_id"
-        },                {
-            "fqsen": "\\UsuarioAleatorio\u003A\u003A\u0024picture",
-            "name": "picture",
-            "summary": "",
-            "url": "classes/UsuarioAleatorio.html#property_picture"
-        },                {
-            "fqsen": "\\UsuarioAleatorio\u003A\u003A\u0024nat",
-            "name": "nat",
-            "summary": "",
-            "url": "classes/UsuarioAleatorio.html#property_nat"
         },                {
             "fqsen": "\\Departamento",
             "name": "Departamento",
@@ -571,15 +496,20 @@ Search.appendIndex(
             "summary": "Busca\u0020un\u0020departamento\u0020utilizando\u0020la\u0020descripci\u00F3n",
             "url": "classes/DepartamentoPDO.html#method_buscaDepartamentoPorDesc"
         },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AcontarDepartamentosTotales\u0028\u0029",
+            "name": "contarDepartamentosTotales",
+            "summary": "Cuenta\u0020cuantos\u0020departamentos\u0020hay\u0020en\u0020la\u0020base\u0020de\u0020datos",
+            "url": "classes/DepartamentoPDO.html#method_contarDepartamentosTotales"
+        },                {
             "fqsen": "\\DepartamentoPDO\u003A\u003AaltaDepartamento\u0028\u0029",
             "name": "altaDepartamento",
             "summary": "Da\u0020de\u0020alta\u0020un\u0020departamento",
             "url": "classes/DepartamentoPDO.html#method_altaDepartamento"
         },                {
-            "fqsen": "\\DepartamentoPDO\u003A\u003AbajafisicaDepartamento\u0028\u0029",
-            "name": "bajafisicaDepartamento",
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbajaFisicaDepartamento\u0028\u0029",
+            "name": "bajaFisicaDepartamento",
             "summary": "Busca\u0020un\u0020departamento\u0020utilizando\u0020el\u0020codigo\u0020y\u0020lo\u0020elimina",
-            "url": "classes/DepartamentoPDO.html#method_bajafisicaDepartamento"
+            "url": "classes/DepartamentoPDO.html#method_bajaFisicaDepartamento"
         },                {
             "fqsen": "\\DepartamentoPDO\u003A\u003AbajaLogicaDepartamento\u0028\u0029",
             "name": "bajaLogicaDepartamento",

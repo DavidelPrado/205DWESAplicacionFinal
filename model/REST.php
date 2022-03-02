@@ -9,18 +9,6 @@
     */
 
     class REST{
-        public static function usuarioAleatorio(){
-            $oJSON=file_get_contents('https://randomuser.me/api/?noinfo');
-    
-            $aJSON=json_decode($oJSON);
-            
-            foreach($aJSON as $valor){
-                foreach($valor as $salida){
-                    return $salida;
-                }
-            }
-        }
-        
         /**
         * Llamada a una api diccionario
         * 

@@ -13,10 +13,6 @@
         exit;
     }
     
-    if(isset($_REQUEST['usuario'])){
-        $aMostrar=REST::usuarioAleatorio();
-    }
-    
     //Definir array para almacenar errores
     $aErrores=[
         "palabra"=>null,
