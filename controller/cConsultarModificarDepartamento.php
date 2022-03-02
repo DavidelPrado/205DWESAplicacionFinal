@@ -53,7 +53,6 @@
     
     
     if($entradaOK){
-        
         $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso'] = 'mantenimiento';
         header('location: ./index.php');

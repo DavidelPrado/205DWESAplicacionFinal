@@ -27,7 +27,7 @@
         $_SESSION["codDepartamento"]=$_REQUEST["modificar"];
 
         $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-        $_SESSION['paginaEnCurso'] = 'WIP';
+        $_SESSION['paginaEnCurso'] = 'modificar';
         header('location: ./index.php');
         exit;
     }

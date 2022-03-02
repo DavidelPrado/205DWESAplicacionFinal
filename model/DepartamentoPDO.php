@@ -85,6 +85,13 @@
             }   
         }
         
+        /**
+        * Cuenta cuantos departamentos hay en la base de datos
+        * 
+        * Busca cuantos departamentos hay en la base de datos utilizando el criterio de busqueda
+        * 
+        * @param String $criterioBusqueda Criterio segun el que vamos a buscar lso departamentos, ya sea todos, los que estan dados de baja o los que estan dados de alta
+        */
         public static function contarDepartamentosTotales($criterioBusqueda="todos"){
             switch($criterioBusqueda){
                 case "todos":
@@ -164,7 +171,7 @@
             $consulta=<<<PDO
                 UPDATE T02_Departamento SET T02_DescDepartamento='{$descDepartamento}'
                 , T02_VolumenDeNegocio='{$volumenDeNegocio}'
-                WHERE T02_CodDepartamento='{$codDepartamento}'"
+                WHERE T02_CodDepartamento='{$codDepartamento}';
             PDO;
             
             return DBPDO::ejecutarConsulta($consulta);
