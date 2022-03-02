@@ -82,6 +82,7 @@
     
     $entradaOK=true;
     
+    
     if(isset($_REQUEST['enviar'])){
         //Comprobar si los campos son correctos
         $aErrores["descripcion"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["descripcion"], 255, 1, OPCIONAL);
