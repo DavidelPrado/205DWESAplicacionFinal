@@ -47,7 +47,8 @@
         'mantenimiento' => 'controller/cMtoDepartamentos.php',
         'eliminar' => 'controller/cEliminarDepartamento.php',
         'alta' => 'controller/cAltaDepartamento.php',
-        'modificar' => 'controller/cConsultarModificarDepartamento.php'
+        'modificar' => 'controller/cConsultarModificarDepartamento.php',
+        'mantenimientoUsuarios' => 'controller/cMtoUsuarios.php'
     ];
 
     //Array de las vistas
@@ -68,6 +69,7 @@
         'mantenimiento' => 'view/vMtoDepartamentos.php',
         'eliminar' => 'view/vEliminarDepartamento.php',
         'alta' => 'view/vAltaDepartamento.php',
-        'modificar' => 'view/vConsultarModificarDepartamento.php'
+        'modificar' => 'view/vConsultarModificarDepartamento.php',
+        'mantenimientoUsuarios' => 'view/vMtoUsuarios.php'
     ];
 ?>

@@ -57,14 +57,18 @@
     }
 
     if(isset($_REQUEST['siguiente'])){
-        $_SESSION['numPagina']++;
+        if($_SESSION["numPagina"]==$_SESSION["totalPaginas"]){
+
+        }else{
+            $_SESSION['numPagina']++;
+        }
 
         header('Location: index.php');
         exit;
     }
 
     if(isset($_REQUEST['ultima'])){
-        
+        $_SESSION["numPagina"]=$_SESSION["totalPaginas"];
 
         header('Location: index.php');
         exit;
@@ -93,6 +97,10 @@
     if(!isset($_SESSION["numPagina"])){
         $_SESSION["numPagina"]=1;
     }
+
+    $_SESSION["totalPaginas"]=ceil(DepartamentoPDO::contarDepartamentosTotales($_REQUEST["criterioBusqueda"]??"todos")/3);
+
+
     $aVDepartamentos=[];
     $oDepartamentos=DepartamentoPDO::buscaDepartamentoPorDesc($_REQUEST["descripcion"]??"", $_REQUEST["criterioBusqueda"]??"todos", $_SESSION["numPagina"]);
 
@@ -109,5 +117,6 @@
     }else{
         $aErrores["descripcion"]="No se ha encontrado el departamento";
     }
+
     include $aVistas['layout'];
 ?>
