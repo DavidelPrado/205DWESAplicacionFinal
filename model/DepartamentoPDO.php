@@ -85,6 +85,29 @@
             }   
         }
         
+        public static function contarDepartamentosTotales($criterioBusqueda="todos"){
+            switch($criterioBusqueda){
+                case "todos":
+                    $criterio="";
+                    break;
+                case "alta":
+                    $criterio="WHERE T02_FechaBajaDepartamento IS NULL";
+                    break;
+                case "baja":
+                    $criterio="WHERE T02_FechaBajaDepartamento IS NOT NULL";
+                    break;
+            }
+
+            $consulta = <<<PDO
+                SELECT * FROM T02_Departamento {$criterio};
+            PDO;
+
+            $oResultado=DBPDO::ejecutarConsulta($consulta);
+        
+            return $oResultado->rowCount();
+        }
+
+
         /**
         * Da de alta un departamento
         * 
