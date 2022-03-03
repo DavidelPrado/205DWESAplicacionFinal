@@ -49,5 +49,11 @@
             </a>
             <p>Modelo físico de datos</p>
         </div>
+        <div class="caja">
+            <a href="img/pdf/DPLUsoDeLaSession.pdf" target="_blank">
+                <img src="img/DPLUsoDeLaSession.png" width="200px" height="250px">
+            </a>
+            <p>Uso de la session</p>
+        </div>
     </div>
 </div>
