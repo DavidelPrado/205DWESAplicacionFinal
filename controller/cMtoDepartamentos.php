@@ -7,9 +7,23 @@
     * Controlador de la ventana de mantenimiento de departamentos
     */
     
+    if(!isset($_SESSION["criterioBusquedaDepartamentos"]["descripcionBuscada"])){
+        $_SESSION["criterioBusquedaDepartamentos"]["descripcionBuscada"]="";
+    }
+    
+    if(!isset($_SESSION["criterioBusquedaDepartamentos"]["estado"])){
+        $_SESSION["criterioBusquedaDepartamentos"]["estado"]="todos";
+    }
+
     if(isset($_REQUEST['volver'])){
         $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso'] = 'inicio';
+        
+        unset($_SESSION['criterioBusquedaDepartamentos']);
+        unset($_SESSION['codDepartamento']);
+        unset($_SESSION['numPagina']);
+        unset($_SESSION['totalPaginas']);
+        
         header('location: ./index.php');
         exit;
     }
@@ -32,8 +46,8 @@
         exit;
     }
 
-    if(isset($_REQUEST['alta'])){
-        $_SESSION["codDepartamento"]=$_REQUEST["alta"];
+    if(isset($_REQUEST['altaDep'])){
+        $_SESSION["codDepartamento"]=$_REQUEST["altaDep"];
 
         $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso'] = 'alta';
@@ -57,8 +71,8 @@
     }
 
     if(isset($_REQUEST['siguiente'])){
-        if($_SESSION["numPagina"]==$_SESSION["totalPaginas"]){
-
+        if($_SESSION["numPagina"]==$_SESSION["totalPaginas"] || $_SESSION["totalPaginas"]==0){
+            
         }else{
             $_SESSION['numPagina']++;
         }
@@ -68,7 +82,10 @@
     }
 
     if(isset($_REQUEST['ultima'])){
-        $_SESSION["numPagina"]=$_SESSION["totalPaginas"];
+        if($_SESSION["totalPaginas"]!=0){
+            $_SESSION["numPagina"]=$_SESSION["totalPaginas"];
+        }
+        
 
         header('Location: index.php');
         exit;
@@ -88,8 +105,11 @@
         $aErrores["descripcion"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["descripcion"], 255, 1, OPCIONAL);
         $aErrores["criterioBusqueda"]=validacionFormularios::validarElementoEnLista($_REQUEST["criterioBusqueda"], ["todos", "alta", "baja"]);
         
-        if($aErrores["descripcion"]!=null && $aErrores["criterioBusqueda"]){
+        if($aErrores["descripcion"]!=null && $aErrores["criterioBusqueda"]!=null){
             $entradaOK=false;
+        }else{
+            $_SESSION["criterioBusquedaDepartamentos"]["descripcionBuscada"]=$_REQUEST["descripcion"];
+            $_SESSION["criterioBusquedaDepartamentos"]["estado"]=$_REQUEST["criterioBusqueda"];
         }
     }else{
         $entradaOK=false;
@@ -99,11 +119,11 @@
         $_SESSION["numPagina"]=1;
     }
 
-    $_SESSION["totalPaginas"]=ceil(DepartamentoPDO::contarDepartamentosTotales($_REQUEST["criterioBusqueda"]??"todos")/3);
+    $_SESSION["totalPaginas"]=ceil(DepartamentoPDO::contarDepartamentosTotales($_SESSION["criterioBusquedaDepartamentos"]["descripcionBuscada"]??"", $_SESSION["criterioBusquedaDepartamentos"]["estado"]??"todos")/3);
 
 
     $aVDepartamentos=[];
-    $oDepartamentos=DepartamentoPDO::buscaDepartamentoPorDesc($_REQUEST["descripcion"]??"", $_REQUEST["criterioBusqueda"]??"todos", $_SESSION["numPagina"]);
+    $oDepartamentos=DepartamentoPDO::buscaDepartamentoPorDesc($_SESSION["criterioBusquedaDepartamentos"]["descripcionBuscada"]??"", $_SESSION["criterioBusquedaDepartamentos"]["estado"]??"todos", $_SESSION["numPagina"]);
 
     if($oDepartamentos){
         foreach($oDepartamentos as $departamento){
