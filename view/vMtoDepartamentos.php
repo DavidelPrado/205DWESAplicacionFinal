@@ -7,18 +7,18 @@
 </header>
 <form method="post">
     <fieldset>
-        <input class="alta" type="submit" name="alta" value="Alta"/>
+        <input class="alta" type="submit" name="altaDep" value="Alta"/>
         <fieldset>
             <label>Descripción:</label>
             <input type='text' name='descripcion' value="<?php
-                echo isset($_REQUEST["descripcion"]) ? $_REQUEST["descripcion"] : "";
+                echo isset($_SESSION["criterioBusquedaDepartamentos"]["descripcionBuscada"]) ? $_SESSION["criterioBusquedaDepartamentos"]["descripcionBuscada"] : "";
             ?>"/>
             
-            <input name="criterioBusqueda" type="radio" value="todos"  <?php echo isset($_REQUEST["criterioBusqueda"]) ? (($_REQUEST["criterioBusqueda"])=="todos" ? "checked" : "") : "checked"; ?>/>
+            <input name="criterioBusqueda" type="radio" value="todos"  <?php echo isset($_SESSION["criterioBusquedaDepartamentos"]["estado"]) ? (($_SESSION["criterioBusquedaDepartamentos"]["estado"])=="todos" ? "checked" : "") : "checked"; ?>/>
             <label>Todos</label>
-            <input name="criterioBusqueda" type="radio" value="alta" <?php echo isset($_REQUEST["criterioBusqueda"]) ? (($_REQUEST["criterioBusqueda"])=="alta" ? "checked" : "") : ""; ?>/>
+            <input name="criterioBusqueda" type="radio" value="alta" <?php echo isset($_SESSION["criterioBusquedaDepartamentos"]["estado"]) ? (($_SESSION["criterioBusquedaDepartamentos"]["estado"])=="alta" ? "checked" : "") : ""; ?>/>
             <label>Alta</label>
-            <input name="criterioBusqueda" type="radio" value="baja" <?php echo isset($_REQUEST["criterioBusqueda"]) ? (($_REQUEST["criterioBusqueda"])=="baja" ? "checked" : "") : ""; ?>/>
+            <input name="criterioBusqueda" type="radio" value="baja" <?php echo isset($_SESSION["criterioBusquedaDepartamentos"]["estado"]) ? (($_SESSION["criterioBusquedaDepartamentos"]["estado"])=="baja" ? "checked" : "") : ""; ?>/>
             <label>Baja</label>
             
             <input type='submit' name='enviar' value='Enviar'/>
@@ -69,7 +69,7 @@
                 <img src="img/anterior.png">
             </button>
 
-            <p><?php echo $_SESSION['numPagina']; ?></p>
+            <p><?php echo $_SESSION['numPagina']."/".$_SESSION['totalPaginas'] ?></p>
 
             <button type="submit" name="siguiente" value="siguiente">
                 <img src="img/siguiente.png">

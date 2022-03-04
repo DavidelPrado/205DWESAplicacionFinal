@@ -92,21 +92,22 @@
         * 
         * @param String $criterioBusqueda Criterio segun el que vamos a buscar lso departamentos, ya sea todos, los que estan dados de baja o los que estan dados de alta
         */
-        public static function contarDepartamentosTotales($criterioBusqueda="todos"){
+        public static function contarDepartamentosTotales($descDepartamento="", $criterioBusqueda="todos"){
             switch($criterioBusqueda){
                 case "todos":
                     $criterio="";
                     break;
                 case "alta":
-                    $criterio="WHERE T02_FechaBajaDepartamento IS NULL";
+                    $criterio="AND T02_FechaBajaDepartamento IS NULL";
                     break;
                 case "baja":
-                    $criterio="WHERE T02_FechaBajaDepartamento IS NOT NULL";
+                    $criterio="AND T02_FechaBajaDepartamento IS NOT NULL";
                     break;
             }
 
             $consulta = <<<PDO
-                SELECT * FROM T02_Departamento {$criterio};
+                SELECT * FROM T02_Departamento WHERE T02_DescDepartamento 
+                LIKE '%{$descDepartamento}%' {$criterio};
             PDO;
 
             $oResultado=DBPDO::ejecutarConsulta($consulta);
