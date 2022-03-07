@@ -7,9 +7,9 @@
 </header>
 <form method="post">
     <fieldset>
-        <input class="alta" type="submit" name="altaDep" value="Alta"/>
-        <input class="alta" type="submit" name="importar" value="Importar"/>
-        <input class="alta" type="submit" name="exportar" value="Exportar"/>
+        <input class="boton" type="submit" name="altaDep" value="Alta"/>
+        <input class="boton" type="submit" name="importar" value="Importar"/>
+        <input class="boton" type="submit" name="exportar" value="Exportar"/>
         <fieldset>
             <label>Descripción:</label>
             <input type='text' name='descripcion' value="<?php
