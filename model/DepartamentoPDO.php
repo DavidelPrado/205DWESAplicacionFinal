@@ -155,8 +155,38 @@
             return $oResultado;
         }
         
-        public static function bajaLogicaDepartamento(){
+        /**
+        * Busca un departamento utilizando el codigo y le añade una fecha de baja
+        * 
+        * Obtiene el código de un departamento y le añade una fecha de baja
+        * 
+        * @param String $codDepartamento Codigo del departamento que queremos eliminar
+        */
+        public static function bajaLogicaDepartamento($codDepartamento){
+            $oDateTime = new DateTime();
             
+            $consulta=<<<SQL
+                UPDATE T02_Departamento SET T02_FechaBajaDepartamento='{$oDateTime->format("y-m-d h:i:s")}' 
+                WHERE T02_CodDepartamento='{$codDepartamento}';
+            SQL;
+                
+            return DBPDO::ejecutarConsulta($consulta);
+        }
+        
+        /**
+        * Busca un departamento utilizando el codigo y le elimina la fecha de baja
+        * 
+        * Busca un departamento utilizando el codigo y le elimina la fecha de baja
+        * 
+        * @param String $codDepartamento Codigo del departamento que queremos eliminar
+        */
+        public static function rehabilitaDepartamento($codDepartamento){
+            $consulta=<<<SQL
+                UPDATE T02_Departamento SET T02_FechaBajaDepartamento=null
+                WHERE T02_CodDepartamento='{$codDepartamento}';
+            SQL;
+                
+            return DBPDO::ejecutarConsulta($consulta);
         }
         
         /**
@@ -176,10 +206,6 @@
             PDO;
             
             return DBPDO::ejecutarConsulta($consulta);
-        }
-        
-        public static function rehabilitaDepartamento(){
-            
         }
         
         /**

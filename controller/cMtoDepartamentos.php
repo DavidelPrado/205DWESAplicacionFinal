@@ -37,6 +37,20 @@
         exit;
     }
     
+    if(isset($_REQUEST['altaLogica'])){
+        DepartamentoPDO::rehabilitaDepartamento($_REQUEST["altaLogica"]);
+
+        header('location: ./index.php');
+        exit;
+    }
+    
+    if(isset($_REQUEST['bajaLogica'])){
+        DepartamentoPDO::bajaLogicaDepartamento($_REQUEST["bajaLogica"]);
+        
+        header('location: ./index.php');
+        exit;
+    }
+    
     if(isset($_REQUEST['modificar'])){
         $_SESSION["codDepartamento"]=$_REQUEST["modificar"];
 
