@@ -153,5 +153,42 @@
             
             $oResultado=DBPDO::ejecutarConsulta($consulta);
         }
+        
+        /**
+        * Busca usuarios que contengan una descripcion
+        * 
+        * Busca usuarios en la base de datos que contengan la descripcion obtenida
+        * 
+        * @param String $descUsuario Descripcion de usuario que queremos buscar
+        */
+        public static function buscarUsuariosPorDesc($descUsuario){
+            $aRespuesta=[];
+            
+            $consulta = <<<PDO
+                SELECT * FROM T01_Usuario
+                WHERE T01_DescUsuario LIKE '%{$descUsuario}%';
+            PDO;
+            
+            $oResultado = DBPDO::ejecutarConsulta($consulta);
+            $aUsuario=$oResultado->fetchAll();
+            
+            if($aUsuario){
+                foreach($aUsuario as $oUsuario){
+                    $aRespuesta[$oUsuario["T01_DescUsuario"]]=new Usuario(
+                        $oUsuario["T01_CodUsuario"], 
+                        $oUsuario["T01_Password"], 
+                        $oUsuario["T01_DescUsuario"],
+                        $oUsuario["T01_NumConexiones"],
+                        $oUsuario["T01_FechaHoraUltimaConexion"], 
+                        $oUsuario["T01_FechaHoraUltimaConexion"],
+                        $oUsuario["T01_Perfil"]
+                    );
+                }
+                
+                return $aRespuesta;
+            }else{
+                return false;
+            }
+        }
     }
 ?>

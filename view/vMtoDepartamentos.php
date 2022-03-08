@@ -7,7 +7,9 @@
 </header>
 <form method="post">
     <fieldset>
-        <input class="alta" type="submit" name="altaDep" value="Alta"/>
+        <input class="boton" type="submit" name="altaDep" value="Alta"/>
+        <input class="boton" type="submit" name="importar" value="Importar"/>
+        <input class="boton" type="submit" name="exportar" value="Exportar"/>
         <fieldset>
             <label>Descripción:</label>
             <input type='text' name='descripcion' value="<?php
@@ -31,6 +33,7 @@
                 <th>Volumen de negocio</th>
                 <th>Fecha de baja</th>
                 <th>Modificar departamento</th>
+                <th>Baja/Alta</th>
                 <th>Eliminar departamento</th>
             </tr>
             <?php
@@ -49,6 +52,21 @@
                                 <img src="./img/lapiz.png" width="30px"></img>
                             </button>
                         </td>
+                        
+                        <?php if($departamento["FechaBajaDepartamento"]==null){ ?>
+                            <td>
+                                <button class="botonImg" type="submit" name="bajaLogica" value="<?php echo $departamento["CodDepartamento"]; ?>">
+                                    <img src="./img/baja.png" width="30px"></img>
+                                </button>
+                            </td>
+                            
+                        <?php }else{ ?>
+                            <td>
+                                <button class="botonImg" type="submit" name="altaLogica" value="<?php echo $departamento["CodDepartamento"]; ?>">
+                                    <img src="./img/alta.png" width="30px"></img>
+                                </button>
+                            </td>
+                        <?php } ?>
 
                         <td>
                             <button class="botonImg" type="submit" name="eliminar" value="<?php echo $departamento["CodDepartamento"]; ?>">

@@ -8,7 +8,7 @@
     </header><br>
     <?php
         echo 'Bienvenido <strong>'.$aVInicio['descUsuario'].'</strong>, es la '.$aVInicio['numConexiones'].' vez que se conecta ';
-        if($_SESSION['usuarioDAW205AplicacionFinal']->getFechaHoraUltimaConexionAnterior()!=null){
+        if($_SESSION['usuarioDAW205AplicacionFinal']->getNumConexiones()!=1){
             echo 'y su última conexión fue el '.$_SESSION['usuarioDAW205AplicacionFinal']->getFechaHoraUltimaConexionAnterior().'.';
                     
         }

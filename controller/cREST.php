@@ -23,7 +23,7 @@
     if(isset($_REQUEST['buscar'])){
         $entradaOK=true;
         
-        $aErrores["palabra"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["palabra"], 255, MIN_TAMANIO, OBLIGATORIO);
+        $aErrores["palabra"]=validacionFormularios::comprobarAlfaNumerico($_REQUEST["palabra"], 255, 1, OBLIGATORIO);
         $aErrores["idioma"]= validacionFormularios::validarElementoEnLista($_REQUEST["idioma"], ["ES", "EN", "FR"]);
         
         if($aErrores["palabra"]!=null && $aErrores["idioma"]!=null){
